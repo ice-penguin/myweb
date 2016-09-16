@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('mywebApp')
-  .controller('NavbarCtrl', function ($scope, $location, Auth) {
+  .controller('FooterCtrl', function ($scope, $location, Auth) {
     // $scope.menu = [{
     //   'title': 'Home',
     //   'link': '/'
