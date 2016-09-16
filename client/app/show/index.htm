@@ -1,3 +1,22 @@
+<script src="assets/js/jquery.min.js" ></script>
+<script src="assets/js/jquery.fancybox-1.3.4.js" ></script>
+<script src="assets/js/jquery.mousewheel-3.0.4.js" ></script>
+<script>
+    $(document).ready(function() {
+
+            $("a[rel=example_group]").fancybox({
+                'transitionIn':'none',
+                'transitionOut':'none',
+                'titlePosition':'over',
+                'titleFormat':function(title, currentArray, currentIndex, currentOpts) {
+                    return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? '   ' + title : '') + '</span>';
+                }
+            });
+        });
+    $(function(){
+    $('.h_nav ul li:first').addClass('cur');
+    })
+</script>
 <div ng-include="'components/navbar/navbar.html'"></div>
 <section class="wrap">
 	<div class="pro">
@@ -108,11 +127,11 @@
                         <div class="clear"></div>
                         </dl>
                     </div>
-                <DIV class=blk_18>
-                <A onmouseup=ISL_StopUp_1() class=LeftBotton onmousedown=ISL_GoUp_1() onmouseout=ISL_StopUp_1() href="javascript:void(0);" target=_self></A>
-                    <DIV class=pcont id=ISL_Cont_1>
-                        <DIV class=ScrCont>
-                        	<div  id=List1_1><dl>
+                <DIV class="blk_18">
+                <A onmouseup="ISL_StopUp_1()" class="LeftBotton" onmousedown="ISL_GoUp_1()" onmouseout="ISL_StopUp_1()" href="javascript:void(0);" target="_self"></A>
+                    <DIV class="pcont" id="ISL_Cont_1">
+                        <DIV class="ScrCont">
+                        	<div  id="List1_1"><dl>
                     				<dt><a  rel="example_group" href="uploads/allimg/141204/2-141204151G40-L.jpg"  title="电缆押出检测线" target="_blank"><img src="uploads/allimg/141204/2-141204151G40-L.jpg"  alt="电缆押出检测线"></a></dt>
                     				<dd>电缆押出检测线</dd>
                 				</dl>
@@ -143,7 +162,7 @@
                             <div id="List2_1"></div>
 		                        </div>
 		                    </div>
-		                	<a onmouseup=ISL_StopDown_1() class=RightBotton onmousedown=ISL_GoDown_1() onmouseout=ISL_StopDown_1() href="javascript:void(0);" target=_self></a>
+		                	<a onmouseup="ISL_StopDown_1()" class="RightBotton" onmousedown="ISL_GoDown_1()" onmouseout="ISL_StopDown_1()" href="javascript:void(0);" target="_self"></a>
 		            </div>
                 </div>
                 <div class="pub_btom">
@@ -200,3 +219,5 @@
 </div>
 </section>
 <div ng-include="'components/footer/footer.html'"></div>
+<script src="assets/js/yuniuw.js" ></script>
+<SCRIPT type="text/javascript">picrun_ini()</SCRIPT>

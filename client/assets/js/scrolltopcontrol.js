@@ -5,7 +5,7 @@ var scrolltotop={
 		scrollduration:400, //滚动过渡时间
 		fadeduration:[500,100] //淡出淡现消失
 	},
-	controlHTML:'<img src="templets/default/images/topback.gif"/>', //返回顶部按钮
+	controlHTML:'<img src="assets/images/topback.gif"/>', //返回顶部按钮
 	controlattrs:{offsetx:10,offsety:80},//返回按钮固定位置
 	anchorkeyword:"#top",
 	state:{
