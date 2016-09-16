@@ -9,7 +9,7 @@
     //创建地图函数：
     function createMap(){
         var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
-        var point = new BMap.Point(120.079798,30.320022);//定义一个中心点坐标
+        var point = new BMap.Point(110.079798,29.320022);//定义一个中心点坐标
         map.centerAndZoom(point,18);//设定地图的中心点和坐标并将地图显示在地图容器中
         window.map = map;//将map变量存储在全局
     }
@@ -36,7 +36,7 @@
     }
     
     //标注点数组
-    var markerArr = [{title:"杭州驰轩科技有限公司",content:"服务热线：0571-86728586<br/>地址：杭州市西湖区振华路200号瑞鼎大厦B1108室",point:"120.079614|30.320241",isOpen:1,icon:{w:23,h:25,l:0,t:21,x:9,lb:12}}
+    var markerArr = [{title:"杭州锦跃科技有限公司",content:"服务热线：0571-88581287<br/>地址：杭州市西湖区留下街道西溪路1002号3楼303",point:"120.065675|30.248561",isOpen:1,icon:{w:23,h:25,l:0,t:21,x:9,lb:12}}
 		 ];
     //创建marker
     function addMarker(){

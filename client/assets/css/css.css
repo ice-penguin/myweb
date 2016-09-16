@@ -3,6 +3,7 @@
 body { color:#333; font:12px/1.231 "微软雅黑" , Verdana, Arial, Helvetica, sans-serif;}
 header, nav, article, section, footer, aside, hgroup, menu { display:block; }
 ul,li,dl,dt,dd,h1,ih2,h3,h4,h5,h6,p,input,img { list-style:none; outline:none; border:0; font-weight:normal; }
+h2{margin: 0}
 a { color:#333; text-decoration:none; }
 a:focus{outline:0;} 
 a:hover { color:#1061cc; text-decoration:underline;}
@@ -315,3 +316,4 @@ footer a{color: #fff;}
 .float0831 UL LI.bot {BORDER-BOTTOM-STYLE: none}
 .iw_poi_title {color:#1061cc;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
 .iw_poi_content { line-height:2;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+.abt_rt .pub_top ul{margin: 0}
