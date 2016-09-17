@@ -14,35 +14,12 @@ angular.module('mywebApp')
     
   	var menu = function (){
 	  	self.menu = [{
-  		    title:'医院',
-  		    state:'admin-clinic-view'
+  		    title:'分类',
+  		    state:'admin-xxx-view'
   		},{
-  		    title:'类目',
-  		    state:'admin-treatment-first',
-          content:[{
-              title:"整形项目",
-              state:'admin-treatment-first'
-          },{
-              title:"地区",
-              state:'admin-city-view',
-          },{
-              title:"资质",
-              state:'admin-accreditation-view',
-          },{
-              title:"大图",
-              state:'admin-banner-view',
-          }]
-  		},{
-  		    title:'用户',
-  		    state:'admin-customer-view',
-          content:[{
-              title:"账号",
-              state:'admin-customer-view'
-          },{
-              title:"建议",
-              state:'admin-advice-view'
-          }]
-  		}];
+          title:'产品',
+          state:'admin-product-view'
+      }];
       initMenuStatus();
   	};
 

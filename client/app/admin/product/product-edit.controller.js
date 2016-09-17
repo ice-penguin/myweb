@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('mywebApp')
-  .controller('AdminEditDoctorController', ['$scope', '$location', '$state','$stateParams','$cookieStore','Upload','Compress_ready',
+  .controller('AdminEditPrdouctController', ['$scope', '$location', '$state','$stateParams','$cookieStore','Upload','Compress_ready',
     function ($scope, $location, $state,$stateParams,$cookieStore,Upload,Compress_ready) {
     var self = this;
  //    self._doctor=$stateParams._doctor;

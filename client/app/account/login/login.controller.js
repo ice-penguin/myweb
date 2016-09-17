@@ -15,7 +15,7 @@ angular.module('mywebApp')
         })
         .then( function() {
           // Logged in, redirect to home
-          $location.path('/admin/doctor/view');
+          $location.path('/admin/product/view');
         })
         .catch( function(err) {
           $scope.errors.other = err.message;
