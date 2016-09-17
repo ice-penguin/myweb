@@ -1,0 +1,260 @@
+<navbar></navbar>
+<link href="assets/css/doctor/doctor_edit.css" rel="stylesheet" type="text/css" >
+
+<div class="content ">
+	<div class="content_body htmSize">
+	<!-- 这里开始显示不同页面 -->
+		<div class="header">
+			<span class="sub_nav blackAlpha54 pointer" ui-sref="admin-clinic-view">医院</span>
+			<span class="sub_nav blackAlpha54">></span>
+			<span class="sub_nav blackAlpha54 pointer" ui-sref="admin-doctor-view({_clinic:editDoctorCtrl.doctor._clinic._id})">医生列表</span>
+			<span class="sub_nav blackAlpha54">></span>
+			<span class="sub_nav blackAlpha54 pointer">医生信息</span>
+		</div>
+
+		<div class="contentLeft">
+			<div class="clinicInfo unique_color pointer">医生信息</div>
+			<div class="clinicInfo blackAlpha54 pointer" ui-sref="admin-doctor-treatment({_doctor:editDoctorCtrl._doctor})">美容项目</div>
+			<div class="clinicInfo blackAlpha54 pointer" ui-sref="admin-doctor-comment({_doctor:editDoctorCtrl._doctor})">用户评论</div>
+		</div>
+		<div class="contentRight">
+			<div class="input_position">
+
+				<div class="input_contents">
+					<div class="input_content">
+						<div class="input_name">名称:</div>
+						<input type="text" class="input_value" ng-model="editDoctorCtrl.doctor.name">
+					</div>
+					<div style="clear:both"></div>
+
+					<div class="input_content">
+						<div class="input_name">邮箱:</div>
+						<input type="text" class="input_value" ng-model="editDoctorCtrl.doctor.email">
+					</div>
+					<div style="clear:both"></div>
+
+					<div class="input_content">
+						<div class="input_name">职称:</div>
+						<input type="text" class="input_value" ng-model="editDoctorCtrl.doctor.jobtitle">
+					</div>
+					<div style="clear:both"></div>
+
+					<div class="input_content">
+						<div class="input_name">职称(中文):</div>
+						<input type="text" class="input_value" ng-model="editDoctorCtrl.doctor.jobtitle_chinese">
+					</div>
+					<div style="clear:both"></div>
+
+					<div class="input_content">
+						<div class="input_name">专业方向:</div>
+						<input type="text" class="input_value" ng-model="editDoctorCtrl.doctor.specialisation">
+					</div>
+					<div style="clear:both"></div>
+
+					<div class="input_content">
+						<div class="input_name">专业方向(中文):</div>
+						<input type="text" class="input_value" ng-model="editDoctorCtrl.doctor.specialisation_chinese">
+					</div>
+					<div style="clear:both"></div>
+
+					<div class="input_content">
+						<div class="input_name">语言:</div>
+						<input type="text" class="input_value" ng-model="editDoctorCtrl.doctor.language">
+					</div>
+					<div style="clear:both"></div>
+
+					<div class="input_content">
+						<div class="input_name">语言(中文):</div>
+						<input type="text" class="input_value" ng-model="editDoctorCtrl.doctor.language_chinese">
+					</div>
+					<div style="clear:both"></div>
+
+					<div class="input_content">
+						<div class="input_name">就职经历:</div>
+						<div class="repear_input">
+							<div style="position:relative;" ng-repeat="career_position in editDoctorCtrl.doctor.career_positions track by $index">
+								<input type="text" class="input_value" ng-model="editDoctorCtrl.doctor.career_positions[$index]">
+								<div class="reduce" ng-hide="$index==0"  ng-click="editDoctorCtrl.reduce('career_position',$index)"></div>
+								<div style="clear:both"></div>
+							</div>
+						</div>
+						<div class="addMore" ng-click="editDoctorCtrl.addMore('career_position')"></div>
+					</div>
+					<div style="clear:both"></div>
+
+					<div class="input_content">
+						<div class="input_name">就职经历(中文):</div>
+						<div class="repear_input">
+							<div style="position:relative;" ng-repeat="career_position_c in editDoctorCtrl.doctor.career_positions_chinese track by $index">
+								<input type="text" class="input_value" ng-model="editDoctorCtrl.doctor.career_positions_chinese[$index]">
+								<div class="reduce" ng-hide="$index==0"  ng-click="editDoctorCtrl.reduce('career_position_c',$index)"></div>
+								<div style="clear:both"></div>
+							</div>
+						</div>
+						<div class="addMore" ng-click="editDoctorCtrl.addMore('career_position_c')"></div>
+					</div>
+					<div style="clear:both"></div>
+
+					<div class="input_content">
+						<div class="input_name">学位:</div>
+						<div class="repear_input">
+							<div style="position:relative;" ng-repeat="qualification_degree in editDoctorCtrl.doctor.qualification_degrees track by $index">
+								<input type="text" class="input_value" ng-model="editDoctorCtrl.doctor.qualification_degrees[$index]">
+								<div class="reduce" ng-hide="$index==0"  ng-click="editDoctorCtrl.reduce('qualification_degree',$index)"></div>
+								<div style="clear:both"></div>
+							</div>
+						</div>
+						<div class="addMore" ng-click="editDoctorCtrl.addMore('qualification_degree')"></div>
+					</div>
+					<div style="clear:both"></div>
+
+					<div class="input_content">
+						<div class="input_name">学位(中文):</div>
+						<div class="repear_input">
+							<div style="position:relative;" ng-repeat="qualification_degree_c in editDoctorCtrl.doctor.qualification_degrees_chinese track by $index">
+								<input type="text" class="input_value" ng-model="editDoctorCtrl.doctor.qualification_degrees_chinese[$index]">
+								<div class="reduce" ng-hide="$index==0"  ng-click="editDoctorCtrl.reduce('qualification_degree_c',$index)"></div>
+								<div style="clear:both"></div>
+							</div>
+						</div>
+						<div class="addMore" ng-click="editDoctorCtrl.addMore('qualification_degree_c')"></div>
+					</div>
+					<div style="clear:both"></div>
+
+					<div class="input_content">
+						<div class="input_name">发明:</div>
+						<div class="repear_input">
+							<div style="position:relative;" ng-repeat="invention in editDoctorCtrl.doctor.inventions track by $index">
+								<input type="text" class="input_value" ng-model="editDoctorCtrl.doctor.inventions[$index]">
+								<div class="reduce" ng-hide="$index==0"  ng-click="editDoctorCtrl.reduce('invention',$index)"></div>
+								<div style="clear:both"></div>
+							</div>
+						</div>
+						<div class="addMore" ng-click="editDoctorCtrl.addMore('invention')"></div>
+					</div>
+					<div style="clear:both"></div>
+
+					<div class="input_content">
+						<div class="input_name">发明(中文):</div>
+						<div class="repear_input">
+							<div style="position:relative;" ng-repeat="invention_c in editDoctorCtrl.doctor.inventions_chinese track by $index">
+								<input type="text" class="input_value" ng-model="editDoctorCtrl.doctor.inventions_chinese[$index]">
+								<div class="reduce" ng-hide="$index==0"  ng-click="editDoctorCtrl.reduce('invention_c',$index)"></div>
+								<div style="clear:both"></div>
+							</div>
+						</div>
+						<div class="addMore" ng-click="editDoctorCtrl.addMore('invention_c')"></div>
+					</div>
+					<div style="clear:both"></div>
+
+					<div class="input_content">
+						<div class="input_name">发表论文:</div>
+						<div class="repear_input">
+							<div style="position:relative;" ng-repeat="publishment in editDoctorCtrl.doctor.publishments track by $index">
+								<input type="text" class="input_value" ng-model="editDoctorCtrl.doctor.publishments[$index]">
+								<div class="reduce" ng-hide="$index==0"  ng-click="editDoctorCtrl.reduce('publishment',$index)"></div>
+								<div style="clear:both"></div>
+							</div>
+						</div>
+						<div class="addMore" ng-click="editDoctorCtrl.addMore('publishment')"></div>
+					</div>
+					<div style="clear:both"></div>
+
+					<div class="input_content">
+						<div class="input_name">发表论文(中文):</div>
+						<div class="repear_input">
+							<div style="position:relative;" ng-repeat="publishment_c in editDoctorCtrl.doctor.publishments_chinese track by $index">
+								<input type="text" class="input_value" ng-model="editDoctorCtrl.doctor.publishments_chinese[$index]">
+								<div class="reduce" ng-hide="$index==0"  ng-click="editDoctorCtrl.reduce('publishment_c',$index)"></div>
+								<div style="clear:both"></div>
+							</div>
+						</div>
+						<div class="addMore" ng-click="editDoctorCtrl.addMore('publishment_c')"></div>
+					</div>
+					<div style="clear:both"></div>
+
+					<div class="input_content">
+						<div class="input_name">荣誉:</div>
+						<div class="repear_input">
+							<div style="position:relative;" ng-repeat="award in editDoctorCtrl.doctor.awards track by $index">
+								<input type="text" class="input_value" ng-model="editDoctorCtrl.doctor.awards[$index]">
+								<div class="reduce" ng-hide="$index==0"  ng-click="editDoctorCtrl.reduce('award',$index)"></div>
+								<div style="clear:both"></div>
+							</div>
+						</div>
+						<div class="addMore" ng-click="editDoctorCtrl.addMore('award')"></div>
+					</div>
+					<div style="clear:both"></div>
+
+					<div class="input_content">
+						<div class="input_name">荣誉(中文):</div>
+						<div class="repear_input">
+							<div style="position:relative;" ng-repeat="award_c in editDoctorCtrl.doctor.awards_chinese track by $index">
+								<input type="text" class="input_value" ng-model="editDoctorCtrl.doctor.awards_chinese[$index]">
+								<div class="reduce" ng-hide="$index==0"  ng-click="editDoctorCtrl.reduce('award_c',$index)"></div>
+								<div style="clear:both"></div>
+							</div>
+						</div>
+						<div class="addMore" ng-click="editDoctorCtrl.addMore('award_c')"></div>
+					</div>
+					<div style="clear:both"></div>
+
+					<div class="input_content">
+						<div class="input_name">图片:</div>
+						<div class="submit_btn" ngf-select ngf-change="editDoctorCtrl.upload($files,0)">
+							<span class="submit_prompt">上传图片</span>
+							<img ng-src="{{'https://diandian-dev.s3-ap-southeast-1.amazonaws.com/'+editDoctorCtrl.doctor.thumbnail}}"  class="submit_img" ng-show="editDoctorCtrl.doctor.thumbnail">
+							<progressbar ng-show="editDoctorCtrl.loaded > 0" class="progress_bar" ng-class="{active: editDoctorCtrl.loaded < 100}" max="100" value="editDoctorCtrl.loaded">
+								<span ng-bind="editDoctorCtrl.loaded" ></span>%
+							</progressbar >
+						</div>
+					</div>
+					<div style="clear:both"></div>
+
+					<div class="textarea_content">
+						<div class="textarea_name">简介:</div>
+						<textarea type="text" class="textarea_value" ng-model="editDoctorCtrl.doctor.blography"></textarea>
+					</div>
+					<div style="clear:both"></div>
+
+					<div class="textarea_content">
+						<div class="textarea_name">简介(中文):</div>
+						<textarea type="text" class="textarea_value" ng-model="editDoctorCtrl.doctor.blography_chinese"></textarea>
+					</div>
+					<div style="clear:both"></div>
+
+					<div class="input_content">
+						<div class="input_name">资质认证:</div>
+						<div class="input_valueDiferent">
+							<div class="accreditation" ng-repeat="accreditation in editDoctorCtrl.accreditations">
+								<div class="accreditationYes" ng-show="accreditation.selectAccreditation" ng-click="accreditation.selectAccreditation=!accreditation.selectAccreditation"></div>
+								<div class="accreditationNo" ng-show="!accreditation.selectAccreditation" ng-click="accreditation.selectAccreditation=!accreditation.selectAccreditation"></div>
+								<div class="accreditationPrompt ellipsis" ng-bind="accreditation.showName">CMAA</div>
+							</div>
+						</div>
+					</div>
+					<div style="clear:both"></div>
+
+					<div class="input_content">
+						<div class="input_name">官方认证:</div>
+						<div class="input_valueDiferent">
+							<div class="accreditation">
+								<div class="accreditationYes" ng-show="editDoctorCtrl.doctor.authorization" ng-click="editDoctorCtrl.doctor.authorization=!editDoctorCtrl.doctor.authorization"></div>
+								<div class="accreditationNo" ng-show="!editDoctorCtrl.doctor.authorization" ng-click="editDoctorCtrl.doctor.authorization=!editDoctorCtrl.doctor.authorization"></div>
+								<div class="accreditationPrompt ellipsis">官方认证</div>
+							</div>
+						</div>
+					</div>
+					<div style="clear:both"></div>
+				</div>
+			</div>
+			<div class="btns">
+				<div class="save_btn" ng-click="editDoctorCtrl.update()"></div>
+				<div class="unacitve_btn" ng-show="!editDoctorCtrl.doctor.isActive" ng-click="editDoctorCtrl.doctor.isActive=!editDoctorCtrl.doctor.isActive"></div>
+				<div class="acitve_btn" ng-show="editDoctorCtrl.doctor.isActive" ng-click="editDoctorCtrl.doctor.isActive=!editDoctorCtrl.doctor.isActive"></div>
+				<div style="clear:both"></div>
+			</div>
+		</div>
+
+	</div>
+</div>

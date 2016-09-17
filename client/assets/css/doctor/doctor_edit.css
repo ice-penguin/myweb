@@ -1,0 +1,76 @@
+.header{
+	margin-bottom: 20px;
+}
+/*contentLeft*/
+.contentLeft{
+	padding: 7px 0;
+	width: 18%;
+	height: 360px;
+	float: left;
+	background: #fff
+}
+.clinicInfo,.doctorInfo{
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+}
+/*contentRight*/
+.contentRight{
+	float: left;
+	margin-left: 2%;
+	margin-bottom: 100px;
+	background:#fff;
+	width: 80%;
+	min-height: 400px; 
+}
+.input_content{
+	position: relative;
+}
+.addMore{
+	position: absolute;
+	right: -20px;
+	width: 13px;
+	height: 40px;
+	background: url(../../images/addB.png) no-repeat 0 13.5px;
+	cursor: pointer;
+}
+.reduce{
+	position: absolute;
+	top:20px;
+	right: -30px;
+	width: 13px;
+	height: 40px;
+	background: url(../../images/reduce.png) no-repeat 0 13.5px;
+	cursor: pointer;
+}
+.input_valueDiferent{
+	float: left;
+	margin-left: 20px;
+	width: 280px;	
+	line-height: 38px;
+	text-indent: 5px;
+}
+.accreditation{
+	float: left;
+	margin-right: 10px;
+	height: 40px;
+	line-height: 40px;
+}
+.accreditationNo{
+	float: left;
+	width: 16px;
+	height: 40px;
+	background: url(../../images/wxz.png) no-repeat 0 12px;
+	cursor: pointer;
+}
+.accreditationYes{
+	float: left;
+	width: 16px;
+	height: 40px;
+	background: url(../../images/xz.png) no-repeat 0 12px;
+	cursor: pointer;
+}
+.accreditationPrompt{
+	float: left;
+	max-width: 250px;
+}

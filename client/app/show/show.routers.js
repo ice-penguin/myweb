@@ -15,6 +15,12 @@ angular.module('mywebApp')
         controller: 'ProductCtrl',
         controllerAs:'productCtrl'
       })
+      .state('product-show', {
+        url: '/product/:id',
+        templateUrl: 'app/show/product-show.htm',
+        controller: 'ProductShowCtrl',
+        controllerAs:'productShowCtrl'
+      })
       .state('connect', {
         url: '/connect',
         templateUrl: 'app/show/connect.htm',
