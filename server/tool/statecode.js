@@ -134,6 +134,16 @@ exports.code602={
 	msg_chinese:"删除参数错误",
 	msg_english:"Delete parameters error"
 };
+exports.code700={
+	code:700,
+	msg_chinese:"上传成功",
+	msg_english:"Upload success"
+};
+exports.code701={
+	code:701,
+	msg_chinese:"上传失败",
+	msg_english:"Upload failed"
+};
 exports.code800={
 	code:800,
 	msg_chinese:"删除成功",

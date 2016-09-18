@@ -7,7 +7,7 @@ var auth = require('../../auth/auth.service');
 var router = express.Router();
 
 
-router.post('/',auth.hasRole(['restaurant']),controller.upload);
+router.post('/',auth.hasRole(['admin']),controller.upload);
 
 
 module.exports = router;

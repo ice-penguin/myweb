@@ -5,6 +5,7 @@ var Product = require('./product.model');
 var Category = require('../category/category.model');
 var util = require('../../tool/util');
 var _ = require('lodash');
+var language;
 
 var validationError = function(res, err) {
   return res.json(422, err);
@@ -58,7 +59,7 @@ exports.create = function (req,res){
 	var name = req.body.name,
 		image = req.body.image,
 		hotValue = req.body.hotValue,
-		functions = req.body.functions,//前端输入多个功能特点用|隔开,形成数组
+		functions = req.body.functions,//前端输入多个功能特点数组
 		parameters = req.body.parameters,
 		_category = req.body._category;
 	if(!name){
@@ -70,6 +71,11 @@ exports.create = function (req,res){
 	if(isNaN(hotValue)){
 		hotValue=0;
 	}
+
+	if(functions && !(functions instanceof Array)){
+		return res.json(200,util.code302(language,"functions"));
+	}
+
 	if(!checkParameters(parameters)){
 		return res.json(200,util.code302(language,"parameters"));
 	}
@@ -77,7 +83,7 @@ exports.create = function (req,res){
 		_category:_category,
 		name:name,
 		hotValue:hotValue,
-		functions:getFucntions(functions),
+		functions:functions || [],
 		parameters:parameters || [],
 		createDate:new Date()
 	};
@@ -106,6 +112,9 @@ exports.update = function (req,res){
 	}
 	if(obj.functions){
 		obj.functions=getFucntions(obj.functions);
+	}
+	if(obj.functions && !(obj.functions instanceof Array)){
+		return res.json(200,util.code402(language,"functions"));
 	}
 	if(obj.parameters&&!checkParameters(obj.parameters)){
 		return res.json(200,util.code402(language,"parameters"));

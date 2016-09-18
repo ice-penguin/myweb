@@ -4,43 +4,35 @@
 <div class="content ">
 	<div class="content_body htmSize">
 	<!-- 这里开始显示不同页面 -->
-		<div class="header">
-			<span class="sub_nav blackAlpha54 pointer" ui-sref="admin-clinic-view">医院</span>
-			<span class="sub_nav blackAlpha54">></span>
-			<span class="sub_nav blackAlpha54 pointer">医生列表</span>
+		<div>
+			<span>分类：</span><span ng-repeat="category in viewProductCtrl.categories" ng-bind="category.name + ' '" class="pointer {{category.style}}" ng-click="viewProductCtrl.changCategory(category._id)"></span>
 		</div>
 
-		<div class="contentLeft">
-			<div class="clinicInfo blackAlpha85 pointer" ui-sref="admin-clinic-edit({_clinic:viewDoctorCtrl._clinic})">医院信息</div>
-			<div class="doctorInfo unique_color pointer">医生</div>
-		</div>
-		<div class="contentRight">
+		<div class="doctorList">
+			<div class="box">
+				<div class="show_box addDoctor pointer" ui-sref="admin-product-add">新增产品</div>	
+				<div class="show_box" ng-repeat="doctor in viewProductCtrl.doctors">
+					<div class="show_image"><img ng-src="{{'assets/upload/'+doctor.thumbnail}}" ng-show="doctor.thumbnail"></div>
 
-			<div class="doctorList">
-				<div class="box">
-					<div class="show_box addDoctor pointer" ui-sref="admin-doctor-add({_clinic:viewDoctorCtrl._clinic})">新增医生</div>	
-					<div class="show_box" ng-repeat="doctor in viewDoctorCtrl.doctors">
-						<div class="show_image"><img ng-src="{{'https://diandian-dev.s3-ap-southeast-1.amazonaws.com/'+doctor.thumbnail}}" ng-show="doctor.thumbnail"></div>
-
-						<div class="show_info">
-							<div class="text_line">
-								<div class="clinicName ellipsis" ng-bind="doctor.name">刘谦</div>
-								<div class="clinicLock {{doctor.isActive?'lock_btn':'unlock_btn'}}" ng-click="viewDoctorCtrl.changeState(doctor._id)"></div>
-								<div style="clear:both"></div>
-							</div>
-
-							<div class="text_line ">
-								<div class="clinicAddress ellipsis" ng-bind="doctor.showJobtitle" title="{{doctor.showJobtitle}}">妇科医生</div>
-								<div class="edit_btn clinicEdit" ui-sref="admin-doctor-edit({_doctor:doctor._id})"></div>
-								<div style="clear:both"></div>
-							</div>
+					<div class="show_info">
+						<div class="text_line">
+							<div class="clinicName ellipsis" ng-bind="doctor.name">刘谦</div>
+							<div class="clinicLock {{doctor.isActive?'lock_btn':'unlock_btn'}}" ng-click="viewProductCtrl.changeState(doctor._id)"></div>
+							<div style="clear:both"></div>
 						</div>
-					</div>	
 
-					<div style="clear:both"></div>
-				</div>
+						<div class="text_line ">
+							<div class="clinicAddress ellipsis" ng-bind="doctor.showJobtitle" title="{{doctor.showJobtitle}}">妇科医生</div>
+							<div class="edit_btn clinicEdit" ui-sref="admin-doctor-edit({_doctor:doctor._id})"></div>
+							<div style="clear:both"></div>
+						</div>
+					</div>
+				</div>	
+
+				<div style="clear:both"></div>
 			</div>
 		</div>
-		<pagination style="float:right;" ng-if="viewDoctorCtrl.pagination.numPages > 1" total-items="viewDoctorCtrl.pagination.totalItems" ng-model="viewDoctorCtrl.pagination.page" items-per-page="viewDoctorCtrl.pagination.itemsPerPage" max-size="viewDoctorCtrl.pagination.maxSize" boundary-links="{{viewDoctorCtrl.pagination.numPages > 2}}" rotate="false" num-pages="viewDoctorCtrl.pagination.numPages" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" ng-change="viewDoctorCtrl.pageChanged()"></pagination>
+		
+		<pagination style="float:right;" ng-if="viewProductCtrl.pagination.numPages > 1" total-items="viewProductCtrl.pagination.totalItems" ng-model="viewProductCtrl.pagination.page" items-per-page="viewProductCtrl.pagination.itemsPerPage" max-size="viewProductCtrl.pagination.maxSize" boundary-links="{{viewProductCtrl.pagination.numPages > 2}}" rotate="false" num-pages="viewProductCtrl.pagination.numPages" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" ng-change="viewProductCtrl.pageChanged()"></pagination>
 	</div>
 </div>

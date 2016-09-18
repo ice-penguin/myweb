@@ -28,11 +28,17 @@
 }
 .addMore{
 	position: absolute;
-	right: -20px;
+	/*right: -20px;*/
+	top:20px;
+	right: -30px;
 	width: 13px;
 	height: 40px;
 	background: url(../../images/addB.png) no-repeat 0 13.5px;
 	cursor: pointer;
+}
+.addMore_param{
+	top:0px;
+	right: -20px;
 }
 .reduce{
 	position: absolute;
@@ -73,4 +79,36 @@
 .accreditationPrompt{
 	float: left;
 	max-width: 250px;
+}
+.select{
+	float: right;
+	width: 15px;
+	height: 40px;
+	background: url(../../images/arrB.png) no-repeat 0 16px;
+}
+.selectBox{
+	border: 1px solid #ccc;
+	border-top:0px;  
+	width: 280px;
+	height: 120px;
+	overflow: hidden;
+	overflow-y:auto;
+	position: absolute;
+	top: 38px;
+	right:10px;
+	background: #fff;
+	z-index:3;
+}
+.selectCell{
+	border-top: 1px solid #ccc;
+}
+.edit_param{
+	position:fixed;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto auto ;
+	height: 230px;
+	border:1px solid #ccc;
 }

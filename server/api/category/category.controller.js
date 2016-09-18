@@ -5,6 +5,7 @@ var Category = require('./category.model');
 var Product = require('../product/product.model');
 var util = require('../../tool/util');
 var _ = require('lodash');
+var language;
 
 var validationError = function(res, err) {
   return res.json(422, err);
@@ -49,21 +50,17 @@ exports.update = function (req,res){
 
 exports.index = function (req,res){
 	var page = req.query.page || 1,
-    	itemsPerPage = req.query.itemsPerPage || 100;
-    	// _category = req.query._category,
-    	// keyWrod = req.query.keyWrod;
+    	itemsPerPage = req.query.itemsPerPage || 100,
+    	isAll = req.query.isAll;//true为全部
     var condition={};
-    // if(_category){
-    // 	condition._category=_category;
-    // }
-    // if(keyWrod){
-    // 	condition.name={'$regex' : '.*' + keyWrod + '.*',"$options":"$i"};
-    // }
     var count=0;
     Category.find(condition)
     .count(function (err,c){
     	if (err) { return handleError(res, err); }
     	count=c;
+    	if(isAll=="true"){
+    		itemsPerPage=count;
+    	}
     	Category.find(condition,{},{
     		skip:itemsPerPage*(page-1),
     		limit:itemsPerPage
@@ -103,8 +100,9 @@ exports.destory = function (req,res){
 		Product.find(condition,function (err,products){
 			if (err) { return handleError(res, err); }
 			_.each(products,function (product){
-				product=_.assign(product,{"$unset":{_category:1}});
-				product.save();
+				Product.findByIdAndUpdate(product._id,{"$unset":{_category:1}},function(){
+					
+				});
 			});
 			category.remove(function (err,category){
 				res.json(200,"delete success");

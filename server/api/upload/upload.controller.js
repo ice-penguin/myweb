@@ -4,6 +4,7 @@ var _ = require('lodash');
 var fs = require('fs');
 var config = require('../../tool/config');
 var util = require('../../tool/util');
+var language;
 // var ImageGroup = require('../image-group/image-group.model');
 
 

@@ -6,7 +6,7 @@ angular.module('mywebApp')
     //产品
     .state('admin-product-view', {
       params:{"navValue":"admin-product-view"},
-      url: '/admin/product/view?page&itemsPerPage',
+      url: '/admin/product/view?page&itemsPerPage&_category',
       templateUrl: 'app/admin/product/product-view.html',
       controller: 'AdminViewProductController',
       controllerAs: 'viewProductCtrl',
@@ -31,7 +31,7 @@ angular.module('mywebApp')
     //管理---餐桌列表
     .state('admin-category-view', {
       params:{"navValue":"admin-category-view"},
-      url: '/admin/category',
+      url: '/admin/category?page&itemsPerPage',
       templateUrl: 'app/admin/category/category-view.html',
       controller: 'ViewCategoryCtrl',
       controllerAs: 'viewCategoryCtrl',

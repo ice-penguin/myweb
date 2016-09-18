@@ -521,6 +521,38 @@ exports.code602=function(language,params){
 	}
 	return msg;
 };
+//上传成功
+exports.code700=function(language){
+	var msg;
+	if(language=="english"){
+		msg={
+			code:stateCode.code700.code,
+			msg:stateCode.code700.msg_english
+		};
+	}else{
+		msg={
+			code:stateCode.code700.code,
+			msg:stateCode.code700.msg_chinese
+		};
+	}
+	return msg;
+};
+//上传失败
+exports.code701=function(language){
+	var msg;
+	if(language=="english"){
+		msg={
+			code:stateCode.code701.code,
+			msg:stateCode.code701.msg_english
+		};
+	}else{
+		msg={
+			code:stateCode.code701.code,
+			msg:stateCode.code701.msg_chinese
+		};
+	}
+	return msg;
+};
 //删除成功
 exports.code800=function(language){
 	var msg;
