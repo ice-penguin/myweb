@@ -1,0 +1,47 @@
+<link href="assets/css/category/category_view.css" rel="stylesheet" type="text/css" >
+<navbar></navbar>
+<div class="content ">
+	<div class="content_body htmSize">
+	<!-- 这里开始显示不同页面 -->
+		<div class="header ">
+			<div class="add_btn" ng-click="viewCategoryCtrl.showEidtCell()">新增分类</div>
+			<div style="clear:both"></div>
+		</div>
+			
+		<!-- table -->
+		<div class="tableList">
+			<div class="box pointer">
+				<div class="table" ng-repeat="category in viewCategoryCtrl.categories" ng-click="viewCategoryCtrl.showEidtCell(category)">
+					<div class="name blackAlpha85" ng-bind="category.name">A11</div>
+					<!-- <div class="remark blackAlpha60" ng-bind="table.remark || '暂无备注'">无人卓</div> -->
+				</div>
+
+				<div style="clear:both"></div>
+				
+			</div>
+			<div style="clear:both"></div>
+			<pagination style="float:right;margin-right:30px;" ng-if="viewCategoryCtrl.pagination.numPages > 1" total-items="viewCategoryCtrl.pagination.totalItems" ng-model="viewCategoryCtrl.pagination.page" items-per-page="viewCategoryCtrl.pagination.itemsPerPage" max-size="viewCategoryCtrl.pagination.maxSize" boundary-links="{{viewCategoryCtrl.pagination.numPages > 2}}" rotate="false" num-pages="viewCategoryCtrl.pagination.numPages" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" ng-change="viewCategoryCtrl.pageChanged()"></pagination>
+		</div>
+
+		<!-- 编辑分类 -->
+		<div class="input_position" ng-show="viewCategoryCtrl.showEdit">
+			<div class="close_btn" ng-click="viewCategoryCtrl.closeEditCell()"></div>
+			<div class="input_contents">
+				<div class="input_content">
+					<div class="input_name">分类名:</div>
+					<input class="input_value" type="text" ng-model="viewCategoryCtrl.eidtTable.name">
+				</div>
+				<!-- <div class="input_content">
+					<div class="input_name">备注:</div>
+					<input class="input_value" type="text" ng-model="viewCategoryCtrl.eidtTable.remark">
+				</div> -->
+			</div>
+			<div class="btns">
+				<div class="save_btn" ng-click="viewCategoryCtrl.save()"></div>
+				<div class="delete_btn" ng-if="viewCategoryCtrl.eidtTable._id" ng-click="viewCategoryCtrl.delete(viewCategoryCtrl.eidtTable._id)"></div>
+				<div style="clear:both"></div>
+			</div>
+		</div>
+
+	</div>
+</div>

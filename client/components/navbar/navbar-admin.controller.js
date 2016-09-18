@@ -8,14 +8,14 @@ angular.module('mywebApp')
     var isLoggedIn=function (){
         var token=Auth.getToken();
         if(!token){
-          $state.go('patient-treatment-first');
+          $state.go('index');
         }
     };
     
   	var menu = function (){
 	  	self.menu = [{
   		    title:'分类',
-  		    state:'admin-xxx-view'
+  		    state:'admin-category-view'
   		},{
           title:'产品',
           state:'admin-product-view'
@@ -55,6 +55,11 @@ angular.module('mywebApp')
     var init = function (){
         isLoggedIn();
         menu();
+    };
+
+    self.logout = function (){
+      Auth.logout();
+      $state.go('index');
     };
 
     init();
