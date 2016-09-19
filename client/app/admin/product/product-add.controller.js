@@ -4,7 +4,6 @@ angular.module('mywebApp')
   .controller('AdminAddProductController', ['$scope', '$location', '$state','$stateParams','$cookieStore','Upload','Compress_ready','Category','Product',
     function ($scope, $location, $state,$stateParams,$cookieStore,Upload,Compress_ready,Category,Product) {
     var self = this;
-    self._clinic=$stateParams._clinic;
     
     var MAX = Math.pow(2, 32);
     var MIN = 1;

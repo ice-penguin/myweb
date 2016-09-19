@@ -23,6 +23,8 @@
 	/*border: 1px solid #000;*/
 	text-align: center;
 	font-size: 14px;
+	height: 40px;
+	overflow: hidden;
 }
 .remark{
 	position: relative;
@@ -31,8 +33,6 @@
 	text-align: center;
 	font-size: 12px;
 }
-
-
 .input_position{
 	margin: auto;
 	position: fixed;

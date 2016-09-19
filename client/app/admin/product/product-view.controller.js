@@ -5,7 +5,7 @@ angular.module('mywebApp')
     function ($scope, $location, $state,$stateParams,$cookieStore,Product,Category) {
     var self = this;
     var page = $stateParams.page || 1;
-    var itemsPerPage = $stateParams.itemsPerPage || 50;  
+    var itemsPerPage = $stateParams.itemsPerPage || 29;  
     var _category = $stateParams._category; 
 
     self.pagination = {
@@ -56,6 +56,10 @@ angular.module('mywebApp')
     	}
     	Product.index(condition,function (data){
     		self.products=data.products;
+        var totalItems = data.count;
+        self.pagination.totalItems = totalItems;
+        self.pagination.numPages = totalItems / itemsPerPage;
+        self.pagination.page = data.page;
     	},function(){
 
     	});
@@ -71,6 +75,10 @@ angular.module('mywebApp')
    		self.pagination.page=1;
    		doLocation();
    	};
+
+    self.pageChanged=function(){
+        doLocation();
+    };50
 
    	init();
 }]);

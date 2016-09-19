@@ -94,7 +94,7 @@ function ($scope, $location, $state,$stateParams,$cookieStore,Auth,User,Category
     };
 
     self.delete = function (id){
-        if(confirm("删除是不可逆操作，确认删除？")){
+        if(confirm("删除是不可逆操作，同时会清空该分类下产品的产品分类，确认删除？")){
             Category.destory({id:id},{},function (){
                 init();
             },function (){

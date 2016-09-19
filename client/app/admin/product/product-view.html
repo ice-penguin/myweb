@@ -5,25 +5,24 @@
 	<div class="content_body htmSize">
 	<!-- 这里开始显示不同页面 -->
 		<div>
-			<span>分类：</span><span ng-repeat="category in viewProductCtrl.categories" ng-bind="category.name + ' '" class="pointer {{category.style}}" ng-click="viewProductCtrl.changCategory(category._id)"></span>
+			<span>分类：</span><span ng-repeat="category in viewProductCtrl.categories" ng-bind="category.name + ' '" class="category_title pointer {{category.style}}" ng-click="viewProductCtrl.changCategory(category._id)"></span>
 		</div>
 
 		<div class="doctorList">
 			<div class="box">
 				<div class="show_box addDoctor pointer" ui-sref="admin-product-add">新增产品</div>	
-				<div class="show_box" ng-repeat="doctor in viewProductCtrl.doctors">
-					<div class="show_image"><img ng-src="{{'assets/upload/'+doctor.thumbnail}}" ng-show="doctor.thumbnail"></div>
+				<div class="show_box" ng-repeat="product in viewProductCtrl.products">
+					<div class="show_image" ui-sref="admin-product-edit({_product:product._id})"><img ng-src="{{'assets/upload/'+product.image}}" ng-show="product.image" ></div>
 
 					<div class="show_info">
 						<div class="text_line">
-							<div class="clinicName ellipsis" ng-bind="doctor.name">刘谦</div>
-							<div class="clinicLock {{doctor.isActive?'lock_btn':'unlock_btn'}}" ng-click="viewProductCtrl.changeState(doctor._id)"></div>
+							<div class="clinicName ellipsis" ng-bind="product.name"></div>
 							<div style="clear:both"></div>
 						</div>
 
 						<div class="text_line ">
-							<div class="clinicAddress ellipsis" ng-bind="doctor.showJobtitle" title="{{doctor.showJobtitle}}">妇科医生</div>
-							<div class="edit_btn clinicEdit" ui-sref="admin-doctor-edit({_doctor:doctor._id})"></div>
+							<div class="clinicAddress ellipsis {{product._category.name?'':'blackAlpha28'}}" ng-bind="product._category.name || '暂无所属分类'" title="{{product._category.name}}" ></div>
+							<div class="edit_btn clinicEdit" ui-sref="admin-product-edit({_product:product._id})"></div>
 							<div style="clear:both"></div>
 						</div>
 					</div>

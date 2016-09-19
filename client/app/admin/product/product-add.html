@@ -25,7 +25,7 @@
 					<div class="input_name">分类:</div>
 					<div class="input_value">
 						<span class="blackAlpha28 pointer" ng-show="!addProductCtrl.product._category" ng-click="addProductCtrl.showSelectBox=!addProductCtrl.showSelectBox">请选择产品分类</span>
-						<span ng-show="addProductCtrl.product._category" ng-bind="addProductCtrl.product.categoryName"></span>
+						<span class="pointer" ng-show="addProductCtrl.product._category" ng-bind="addProductCtrl.product.categoryName" ng-click="addProductCtrl.showSelectBox=!addProductCtrl.showSelectBox"></span>
 						<div class="select pointer" ng-click="addProductCtrl.showSelectBox=!addProductCtrl.showSelectBox"></div>
 						<div class="selectBox" ng-show="addProductCtrl.showSelectBox">
 							<div class="selectCell pointer" ng-repeat="category in addProductCtrl.categories" ng-bind="category.name" ng-click="addProductCtrl.changCategory(category)">

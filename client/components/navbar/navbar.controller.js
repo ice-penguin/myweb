@@ -56,5 +56,4 @@ angular.module('mywebApp')
     };
 
     init();
-    console.log(self.menu);
   }]);

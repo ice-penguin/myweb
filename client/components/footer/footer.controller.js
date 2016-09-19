@@ -20,5 +20,5 @@ angular.module('mywebApp')
     // $scope.isActive = function(route) {
     //   return route === $location.path();
     // };
-    console.log("xssx");
+    
   });

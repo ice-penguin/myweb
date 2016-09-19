@@ -100,8 +100,7 @@ exports.destory = function (req,res){
 		Product.find(condition,function (err,products){
 			if (err) { return handleError(res, err); }
 			_.each(products,function (product){
-				Product.findByIdAndUpdate(product._id,{"$unset":{_category:1}},function(){
-					
+				product.update({"$unset":{_category:1}},function(){
 				});
 			});
 			category.remove(function (err,category){

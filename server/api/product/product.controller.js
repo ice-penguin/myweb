@@ -110,9 +110,6 @@ exports.update = function (req,res){
 	if(obj.hotValue&&isNaN(obj.hotValue)){
 		return res.json(200,util.code402(language,"hotValue"));
 	}
-	if(obj.functions){
-		obj.functions=getFucntions(obj.functions);
-	}
 	if(obj.functions && !(obj.functions instanceof Array)){
 		return res.json(200,util.code402(language,"functions"));
 	}
@@ -132,8 +129,8 @@ exports.update = function (req,res){
 			});
 		});
 	};
-	if(_category){
-		Category.findById(_category,function (err,category){
+	if(obj._category){
+		Category.findById(obj._category,function (err,category){
 			if (err) { return handleError(res, err); }
 			if (!category) {return res.json(200,util.code404(language,"category"));}
 			doUpdate();
