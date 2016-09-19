@@ -6,27 +6,7 @@
             </div>
             <div class="lf_nav_ct">
                 <ul>
-                <li><a href="shangyeguanliruanjian/index.htm" >CXsensor传感器</a></li>
-                
-                <li><a href="POSshoukuanji/index.htm" >数显仪表</a></li>
-                
-                <li><a href="haocai/index.htm" >称重专用仪表</a></li>
-                
-                <li><a href="POSdayinji/index.htm" >德国HBM传感器及仪表</a></li>
-                
-                <li><a href="tiaomadayinji/index.htm" >瑞士METTLER TOLEDO称重传感器及仪表</a></li>
-                
-                <li><a href="POSqianxiang/index.htm" >美国AC称重传感器</a></li>
-                
-                <li><a href="tiaomasaomiaoqi/index.htm" >美国CHcontech称重测力压力传感器</a></li>
-                
-                <li><a href="kehuxianshiping/index.htm" >美国Transcell称重传感器</a></li>
-                
-                <li><a href="IC_IDcika_huiyuanka/index.htm" >美国Celtron称重传感器</a></li>
-                
-                <li><a href="anfangjiankongshebei/index.htm" >美国Suncells传感器及仪表</a></li>
-                
-                <li><a href="jiguangsaomiaopingtai/index.htm" >位移传感器</a></li>
+                <li ng-repeat="category in productCtrl.categories" ><a href="" ng-bind="category.name" ng-click="productCtrl.changeCategory(category._id)">CXsensor传感器</a></li>
                 
                 </ul>
             </div>

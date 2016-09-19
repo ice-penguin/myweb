@@ -5,7 +5,11 @@
 	<div class="content_body htmSize">
 	<!-- 这里开始显示不同页面 -->
 		<div>
-			<span>分类：</span><span ng-repeat="category in viewProductCtrl.categories" ng-bind="category.name + ' '" class="category_title pointer {{category.style}}" ng-click="viewProductCtrl.changCategory(category._id)"></span>
+			<span>分类：</span><span ng-repeat="category in viewProductCtrl.categories" ng-bind="category.name" class="category_title pointer {{category.style}}" ng-click="viewProductCtrl.changCategory(category._id)"></span>
+		</div>
+		<br>
+		<div>
+			排序方式：<span ng-repeat="sort in viewProductCtrl.sortBy" ng-bind="sort.name" class="category_title pointer {{sort.style}}" ng-click="viewProductCtrl.changSortBy(sort.value)">时间降序</span>
 		</div>
 
 		<div class="doctorList">

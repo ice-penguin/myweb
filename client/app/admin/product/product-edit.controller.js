@@ -20,7 +20,7 @@ angular.module('mywebApp')
     	_category:null,//分类id
     	categoryName:null,//分类名
 		image:null,//图片
-		hotValue:0,//热值，可以用推荐，越大排序越前
+		hotValue:null,//热值，可以用推荐，越大排序越前
 		functions:[''],//功能与特点，
 		parameters:[]//产品参数，name,value
     };

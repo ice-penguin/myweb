@@ -1,9 +1,11 @@
 'use strict';
 
 angular.module('mywebApp')
-  .controller('NavbarCtrl', ['$scope', '$location', '$state','$stateParams','Auth',
-    function ($scope, $location,$state,$stateParams, Auth) {
+  .controller('NavbarCtrl', ['$scope', '$location', '$state','$stateParams','Auth','Category',
+    function ($scope, $location,$state,$stateParams, Auth,Category) {
     var self=this;
+
+    var _category=null;
 
     var menu = function (){
         self.menu = [{
@@ -50,9 +52,43 @@ angular.module('mywebApp')
         }
       });
     };
+
+    var loadCategory=function(){
+        Category.index({isAll:'true',random:new Date().getTime()},function (data){
+            self.categories=data.categories;
+            self.categories.unshift({name:"产品分类"});
+        },function(){
+
+        });
+    };
         
     var init = function (){
         menu();
+        loadCategory();
+    };
+
+    self.changeCategory = function (category){
+      _category=null;
+      if(category._id){
+        _category=category._id;
+      }
+    };
+
+    self.search =function(){
+      var parmas={
+        page:1
+      };
+      if(_category){
+        parmas._category=_category;
+      }else{
+        parmas._category=null;
+      }
+      if(self.keyWord){
+        parmas.keyWord=self.keyWord;
+      }else{
+        parmas.keyWord=null;
+      }
+      $state.go("product",parmas);
     };
 
     init();

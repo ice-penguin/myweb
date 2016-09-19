@@ -6,7 +6,7 @@ angular.module('mywebApp')
     //产品
     .state('admin-product-view', {
       params:{"navValue":"admin-product-view"},
-      url: '/admin/product/view?page&itemsPerPage&_category',
+      url: '/admin/product/view?page&itemsPerPage&_category&sortBy',
       templateUrl: 'app/admin/product/product-view.html',
       controller: 'AdminViewProductController',
       controllerAs: 'viewProductCtrl',

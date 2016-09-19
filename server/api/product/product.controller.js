@@ -144,19 +144,27 @@ exports.index = function (req,res){
 	var page = req.query.page || 1,
     	itemsPerPage = req.query.itemsPerPage || 100,
     	_category = req.query._category,
-    	keyWrod = req.query.keyWrod,
-    	sortBy = req.query.sortBy;//hotValue,默认为createDate
+    	keyWord = req.query.keyWord,
+    	sortBy = req.query.sortBy;//dateDes,dateAsce,hotDes,hotAsce,默认为dateDes
     var condition={};
     var sort={createDate:-1};
     if(_category){
     	condition._category=_category;
     }
-    if(keyWrod){
-    	condition.name={'$regex' : '.*' + keyWrod + '.*',"$options":"$i"};
+    if(keyWord){
+    	condition.name={'$regex' : '.*' + keyWord + '.*',"$options":"$i"};
     }
-    if(sortBy=="hotValue"){
-    	sort={hotValue:-1};
+    console.log(condition);
+    if(sortBy){
+    	if("dateAsce"==sortBy){
+	    	sort={createDate:1};
+	    }else if("hotDes"==sortBy){
+	    	sort={hotValue:-1};
+	    }else if("hotAsce"==sortBy){
+	    	sort={hotValue:1};
+	    }
     }
+    
     var count=0;
     Product.find(condition)
     .count(function (err,c){

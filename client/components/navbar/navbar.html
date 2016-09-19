@@ -20,18 +20,6 @@
                 
                 <li ng-repeat="menu in navbarCtrl.menu" class="{{menu.style}}"><a href="index.htm" ui-sref="{{menu.state}}"  ng-bind="menu.title">锦跃首页</a></li>
                 
-                <!-- <li><a href="html/guanyuwomen/index.htm"  >关于我们</a></li>
-                
-                <li><a href="html/chanpinzhongxin/index.htm"   rel='dropmenu2'>产品中心</a></li>
-                
-                <li><a href="html/xinwenzixun/index.htm"   rel='dropmenu3'>新闻资讯</a></li>
-                
-                <li><a href="html/Honor/index.htm"  >工程案例</a></li>
-                
-                <li><a href="html/zaixianliuyan/index.htm"  >在线留言</a></li>
-                
-                <li><a href="html/lianxiwomen/index.htm"  >联系我们</a></li> -->
-                
             </ul>
         </div>
         </div>
@@ -43,20 +31,16 @@
     </div>
     <div class="wrap">
     <div class="search">
-                <div class="fl">
-                    <b>关键词 ：</b>　<a href="javascript:if(confirm('http://www.cxsensor.cn/plus/search.php?keyword=POS9000A%E5%88%86  \n\nτݾҢδӀ Teleport Pro ȡܘìӲΪ ̼ˇѻؔ֯ƅԽ̹ƅԽքc (ţһһ֨Ҫʹԃؔ֯ƅԽìȫӎ߼pЮĿ͘єqքpθçqޚqc)  \n\nţҪՓؾϱǷʏղߪ̼ðÿ'))window.location='http://www.cxsensor.cn/plus/search.php?keyword=POS9000A%E5%88%86'" >POS9000A分</a> 　<a href="javascript:if(confirm('http://www.cxsensor.cn/plus/search.php?keyword=pos  \n\nτݾҢδӀ Teleport Pro ȡܘìӲΪ ̼ˇѻؔ֯ƅԽ̹ƅԽքc (ţһһ֨Ҫʹԃؔ֯ƅԽìȫӎ߼pЮĿ͘єqքpθçqޚqc)  \n\nţҪՓؾϱǷʏղߪ̼ðÿ'))window.location='http://www.cxsensor.cn/plus/search.php?keyword=pos'" >pos</a> 　<a href="javascript:if(confirm('http://www.cxsensor.cn/plus/search.php?keyword=22  \n\nτݾҢδӀ Teleport Pro ȡܘìӲΪ ̼ˇѻؔ֯ƅԽ̹ƅԽքc (ţһһ֨Ҫʹԃؔ֯ƅԽìȫӎ߼pЮĿ͘єqքpθçqޚqc)  \n\nţҪՓؾϱǷʏղߪ̼ðÿ'))window.location='http://www.cxsensor.cn/plus/search.php?keyword=22'" >22</a> 　<a href="javascript:if(confirm('http://www.cxsensor.cn/plus/search.php?keyword=Z6  \n\nτݾҢδӀ Teleport Pro ȡܘìӲΪ ̼ˇѻؔ֯ƅԽ̹ƅԽքc (ţһһ֨Ҫʹԃؔ֯ƅԽìȫӎ߼pЮĿ͘єqքpθçqޚqc)  \n\nţҪՓؾϱǷʏղߪ̼ðÿ'))window.location='http://www.cxsensor.cn/plus/search.php?keyword=Z6'" >Z6</a> 　<a href="javascript:if(confirm('http://www.cxsensor.cn/plus/search.php?keyword=11  \n\nτݾҢδӀ Teleport Pro ȡܘìӲΪ ̼ˇѻؔ֯ƅԽ̹ƅԽքc (ţһһ֨Ҫʹԃؔ֯ƅԽìȫӎ߼pЮĿ͘єqքpθçqޚqc)  \n\nţҪՓؾϱǷʏղߪ̼ðÿ'))window.location='http://www.cxsensor.cn/plus/search.php?keyword=11'" >11</a> 　<a href="javascript:if(confirm('http://www.cxsensor.cn/plus/search.php?keyword=RTN  \n\nτݾҢδӀ Teleport Pro ȡܘìӲΪ ̼ˇѻؔ֯ƅԽ̹ƅԽքc (ţһһ֨Ҫʹԃؔ֯ƅԽìȫӎ߼pЮĿ͘єqքpθçqޚqc)  \n\nţҪՓؾϱǷʏղߪ̼ðÿ'))window.location='http://www.cxsensor.cn/plus/search.php?keyword=RTN'" >RTN</a> 
-                </div><form  name="formsearch" action="http://www.cxsensor.cn/plus/search.php">
-                <div class="form fr">
-           <input type="hidden" name="kwtype" value="0">
-           <input name="q" type="text" class="search-keyword" id="search-keyword" value="在这里搜索..." onfocus="if(this.value=='在这里搜索...'){this.value='';}" onblur="if(this.value==''){this.value='在这里搜索...';}">
-           <select name="searchtype" class="search-option" id="search-option">
-               <option value="title" selected="1">产品分类</option>
+        <div class="form fr">
+            <input type="hidden" name="kwtype" value="0">
+            <input name="q" type="text" class="search-keyword" placeholder="在这里搜索..." onfocus="if(this.placeholder=='在这里搜索...'){this.placeholder='';}" onblur="if(this.placeholder==''){this.placeholder='在这里搜索...';}" ng-model="navbarCtrl.keyWord">
+            <select name="searchtype" class="search-option">
                 
-                <option value='10'>-CXsensor传感器</option>
+                <option ng-repeat="category in navbarCtrl.categories" ng-bind="'-'+category.name" ng-click="navbarCtrl.changeCategory(category)">-CXsensor传感器</option>
                 
-           </select>
-          <button type="submit" class="search-submit">搜索</button>
-        </div></form>
+            </select>
+            <button type="submit" class="search-submit" ng-click="navbarCtrl.search()">搜索</button>
+        </div>
                 <div class="clear"></div>
             </div>
     </div>

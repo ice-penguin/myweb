@@ -11,7 +11,7 @@ angular.module('mywebApp')
         controllerAs:'indexCtrl'
       })
       .state('product', {
-        url: '/product',
+        url: '/product?page&itemsPerPage&_category&keyWord',
         params:{"navValue":"product"},
         templateUrl: 'app/show/product.htm',
         controller: 'ProductCtrl',
