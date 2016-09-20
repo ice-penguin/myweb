@@ -18,7 +18,7 @@ li{list-style:none;}
 .mt { margin-top:10px; }
 .mm { margin-bottom:10px; }
 .clearfix:after {visibility: hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;}
-.wrap { width:960px; margin:auto; }
+.wrap { width:960px; margin:auto; margin-bottom: 10px;}
 .f2 { background:#f2f2f2; }
 
 .resultbar { background:#4392d4; color:#fff;margin: 10px auto;padding: 10px;}
@@ -99,7 +99,8 @@ header .top { position:relative; text-align:right; background:url(../images/body
 .pub_bo table { width:96%;}
 .pub_bo table,td {padding: 5px;font-size: inherit;border-collapse: collapse;border: 1px #888 solid;}
 .pub_bo table textarea { width:350px; height:100px;}
-.pub_bo ul li { width:33%; text-align:center; float:left; }
+.width33{width: 33%;}
+.pub_bo ul li { text-align:center; float:left; }
 .pub_bo ul li a img {display: block;margin: 0 auto; vertical-align:middle; padding:2px; border:1px #ddd solid; width:180px; height:180px; }
 .pub_bo ul li a:hvoer img { border:#1061cc 1px solid;}
 .pub_bo ul li span { display:block; height:30px; line-height:30px; overflow:hidden;}

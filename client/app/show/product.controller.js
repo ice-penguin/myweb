@@ -5,7 +5,7 @@ angular.module('mywebApp')
     function ($scope, $location, $state,$stateParams,$cookieStore,Product,Category) {
     var self=this;
     var page = $stateParams.page || 1;
-    var itemsPerPage = $stateParams.itemsPerPage || 20;  
+    var itemsPerPage = $stateParams.itemsPerPage || 18;  
     var _category = $stateParams._category; 
     var keyWord = $stateParams.keyWord; 
 
