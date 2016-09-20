@@ -8,27 +8,7 @@
             </div>
             <div class="lf_nav_ct">
                 <ul> 
-                 <li><a href="../chanpinzhongxin/shangyeguanliruanjian/index.htm"  target="_blank" title="CXsensor传感器">CXsensor传感器</a></li>
-                  
-                 <li><a href="../chanpinzhongxin/POSshoukuanji/index.htm"  target="_blank" title="数显仪表">数显仪表</a></li>
-                  
-                 <li><a href="../chanpinzhongxin/haocai/index.htm"  target="_blank" title="称重专用仪表">称重专用仪表</a></li>
-                  
-                 <li><a href="../chanpinzhongxin/POSdayinji/index.htm"  target="_blank" title="德国HBM传感器及仪表">德国HBM传感器及仪表</a></li>
-                  
-                 <li><a href="../chanpinzhongxin/tiaomadayinji/index.htm"  target="_blank" title="瑞士METTLER TOLEDO称重传感器及仪表">瑞士METTLER TOLEDO称重传感器及仪表</a></li>
-                  
-                 <li><a href="../chanpinzhongxin/POSqianxiang/index.htm"  target="_blank" title="美国AC称重传感器">美国AC称重传感器</a></li>
-                  
-                 <li><a href="../chanpinzhongxin/tiaomasaomiaoqi/index.htm"  target="_blank" title="美国CHcontech称重测力压力传感器">美国CHcontech称重测力压力传感器</a></li>
-                  
-                 <li><a href="../chanpinzhongxin/kehuxianshiping/index.htm"  target="_blank" title="美国Transcell称重传感器">美国Transcell称重传感器</a></li>
-                  
-                 <li><a href="../chanpinzhongxin/IC_IDcika_huiyuanka/index.htm"  target="_blank" title="美国Celtron称重传感器">美国Celtron称重传感器</a></li>
-                  
-                 <li><a href="../chanpinzhongxin/anfangjiankongshebei/index.htm"  target="_blank" title="美国Suncells传感器及仪表">美国Suncells传感器及仪表</a></li>
-                  
-                 <li><a href="../chanpinzhongxin/jiguangsaomiaopingtai/index.htm"  target="_blank" title="位移传感器">位移传感器</a></li>
+                 <li ng-repeat="category in connectCtrl.categories" ><a href="" ng-bind="category.name" ui-sref="product({_category:category._id})">CXsensor传感器</a></li>
                  
                 </ul>
             </div>

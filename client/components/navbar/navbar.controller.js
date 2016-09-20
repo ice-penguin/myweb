@@ -78,15 +78,21 @@ angular.module('mywebApp')
       var parmas={
         page:1
       };
+      var count=0;
       if(_category){
+        count++;
         parmas._category=_category;
       }else{
         parmas._category=null;
       }
       if(self.keyWord){
+        count++;
         parmas.keyWord=self.keyWord;
       }else{
         parmas.keyWord=null;
+      }
+      if(!count){
+        return;
       }
       $state.go("product",parmas);
     };

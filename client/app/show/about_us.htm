@@ -6,7 +6,7 @@
         </div>
         <div class="lf_nav_ct">
             <ul> 
-             <li><a href="../chanpinzhongxin/shangyeguanliruanjian/index.htm"  target="_blank" title="CXsensor传感器">CXsensor传感器</a></li>
+             <li ng-repeat="category in aboutUsCtrl.categories" ><a href="" ng-bind="category.name" ui-sref="product({_category:category._id})">CXsensor传感器</a></li>
              
             </ul>
         </div>
