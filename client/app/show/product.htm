@@ -2,7 +2,7 @@
 <section class="wrap">
         <div class="fl lf_nav mt">
             <div class="lf_nav_top">
-                <h2><a href="index.htm" >锦跃科技产品中心</a></h2>
+                <h2><a ui-sref="index" >锦跃科技产品中心</a></h2>
             </div>
             <div class="lf_nav_ct">
                 <ul>
@@ -13,7 +13,7 @@
             <div class="lf_nav_btm">咨询服务热线<br><span>0571-88581287</span></div>
             <div class="contactn mt mm">
 				<div class="tits">
-					<h4><a href="../lianxiwomen/index.htm" >联系我们</a></h4>
+					<h4><a ui-sref="connect" >联系我们</a></h4>
 			    </div>
 			    <div class="subnr">
 			    	<img src="assets/images/CatactUs.jpg"  alt="锦跃科技" title="锦跃科技">  
@@ -31,7 +31,7 @@
         <div class="pub_top_rt position fr">当前位置：<a ui-sref="index">首页</a> » <a ui-sref="product({page:1,_category:null,keyWord:null})" >产品中心</a></div>
         <div class="pub_top_lf fl">
             <ul>
-                <li class="cur"><a href="">产品中心</a></li>
+                <li class="cur"><a ui-sref="product">产品中心</a></li>
             </ul>
         </div>
         <div class="clear"></div>
@@ -39,8 +39,8 @@
     <div class="pub_bo coment">
        	<ul class="clearfix">
            <li ng-repeat="product in productCtrl.products" class="width33">
-	           <a ui-sref="product-show({id:product._id})"  title="{{product.name}}"><img ng-src="{{'assets/upload/'+product.image}}"  alt="{{product.name}}"></a>
-	           <span><a ui-sref="product-show({id:product._id})"  title="{{product.name}}" ng-bind="product.name"></a></span>
+	           <a ui-sref="product-show({id:product._id})"  title="{{product.name}}" target="_blank"><img ng-src="{{'assets/upload/'+product.image}}"  alt="{{product.name}}"></a>
+	           <span><a ui-sref="product-show({id:product._id})"  title="{{product.name}}" ng-bind="product.name" target="_blank"></a></span>
            </li> 
         </ul>
         <pagination style="float:right;" ng-if="productCtrl.pagination.numPages > 1" total-items="productCtrl.pagination.totalItems" ng-model="productCtrl.pagination.page" items-per-page="productCtrl.pagination.itemsPerPage" max-size="productCtrl.pagination.maxSize" boundary-links="{{productCtrl.pagination.numPages > 2}}" rotate="false" num-pages="productCtrl.pagination.numPages" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" ng-change="productCtrl.pageChanged()"></pagination>
