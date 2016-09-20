@@ -4,7 +4,7 @@ angular.module('mywebApp')
   .config(function ($stateProvider) {
     $stateProvider
       .state('login', {
-        url: '/login',
+        url: '/hzjy/login',
         templateUrl: 'app/account/login/login.html',
         controller: 'LoginCtrl'
       })
