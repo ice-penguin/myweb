@@ -22,11 +22,11 @@
 	<div class="pro">
     	<div class="fl lf_nav">
             <div class="lf_nav_top">
-                <h2><a href="html/chanpinzhongxin/index.htm"  target="_blank">锦跃科技产品中心</a></h2>
+                <h2><a ui-sref="index"  target="_blank">锦跃科技产品中心</a></h2>
             </div>
             <div class="lf_nav_ct">
                 <ul> 
-                 <li><a href="html/chanpinzhongxin/shangyeguanliruanjian/index.htm"  target="_blank" title="CXsensor传感器">CXsensor传感器</a></li>
+                 <li ng-repeat="category in indexCtrl.categories" ><a href="" target="_blank" ng-bind="category.name" ui-sref="product({_category:category._id})">CXsensor传感器</a></li>
                  
                 </ul>
             </div>
@@ -34,18 +34,18 @@
         </div>
         <div class="fr pros">
             <div class="pub_top">
-                <div class="pub_top_rt fr"><a href="html/chanpinzhongxin/index.htm"  target="_blank"></a></div>
+                <div class="pub_top_rt fr"><a ui-sref="product" target="_blank"></a></div>
                 <div class="pub_top_lf fl">
                     <ul>
-                        <li class="cur"><a href="html/chanpinzhongxin/index.htm"  target="_blank">推荐产品</a></li>
+                        <li class="cur"><a ui-sref="product"  target="_blank">推荐产品</a></li>
                     </ul>
                 </div>
                 <div class="clear"></div>
             </div>
             <div class="pros_ct clearfix">
-             <dl>
-             	<dt><a href="html/chanpinzhongxin/shangyeguanliruanjian/yeweibi/2015/0709/165.html"  title="DDG100工业在线电导率仪" target="_blank"><img src="uploads/allimg/150709/2-150F91515010-L.jpg"  alt="DDG100工业在线电导率仪"></a></dt>
-                <dd><a href="html/chanpinzhongxin/shangyeguanliruanjian/yeweibi/2015/0709/165.html"  target="_blank" title="DDG100工业在线电导率仪">DDG100工业在线电导率仪</a></dd>
+             <dl ng-repeat="product in indexCtrl.pushProducts">
+             	<dt><a ui-sref="product-show({id:product._id})"  title="{{product.name}}" target="_blank"><img ng-src="{{'assets/upload/'+product.image}}"  alt="{{product.name}}"></a></dt>
+                <dd><a ui-sref="product-show({id:product._id})"  title="{{product.name}}" target="_blank" ng-bind="product.name"></a></dd>
             </dl>
             
 
@@ -58,7 +58,7 @@
                     <div class="pub_top_rt fr">
                         <span>服务热线：0571-88581287</span></div>
                     <div class="pub_top_lf fl">
-                        <h2><a href="html/guanyuwomen/index.htm"  target="_blank">关于我们</a></h2>
+                        <h2><a ui-sref="about-us"  target="_blank">关于我们</a></h2>
                     </div>
                     <div class="clear">
                     </div>
@@ -66,12 +66,12 @@
                 <div class="abt_lf_ct">
                     <div class="abt_lf_ct_top">
                         <dl class="fl">
-                            <dt class="fl"><img src="uploads/typeimg/1416716580110.jpg"  alt="" style="width:200px;height:200px" /></dt>
-							<dd class="fr"><h4><a href="html/guanyuwomen/index.htm"  target="_blank">杭州锦跃科技有限公司</a></h4>
+                            <dt class="fl"><img src="assets/images/aboutUs_logo.jpg"  alt="" style="width:200px;height:200px" /></dt>
+							<dd class="fr"><h4><a ui-sref="index"  target="_blank">杭州锦跃科技有限公司</a></h4>
             <div class="abt_lf_ct_main">
                 <p> 杭州锦跃科技有限公司位于美丽的西子湖畔,公司集工业自动化产品的科研开发、生产制造压力、扭矩、称重、位移等传感器及工程服务为一体的高科技企业，致力于工业自动化设备及系统的生产与应用。</p>
             </div>
-            <span><a href="html/guanyuwomen/index.htm"  target="_blank">查看更多>></a></span>
+            <span><a ui-sref="about-us"  target="_blank">查看更多>></a></span>
         </dd>
                         <div class="clear"></div>
                         </dl>
@@ -81,9 +81,9 @@
                     <DIV class="pcont" id="ISL_Cont_1">
                         <DIV class="ScrCont">
                         	<div  id="List1_1">
-                                <dl>
-                    				<dt><a  rel="example_group" href="uploads/allimg/141204/2-141204151G40-L.jpg"  title="电缆押出检测线" target="_blank"><img src="uploads/allimg/141204/2-141204151G40-L.jpg"  alt="电缆押出检测线"></a></dt>
-                    				<dd>电缆押出检测线</dd>
+                                <dl ng-repeat="product in indexCtrl.newProducts">
+                    				<dt><a  rel="example_group" ui-sref="product-show({id:product._id})"  title="{{product.name}}" target="_blank"><img ng-src="{{'assets/upload/'+product.image}}"  alt="{{product.name}}"></a></dt>
+                    				<dd ng-bind="product.name"></dd>
                 				</dl>
 
 
@@ -103,6 +103,18 @@
             </div>
 			<div class="abt_rt fr" id="index_NewCut">
                 <div class="pub_top">
+                    <h2><a ui-sref="about-us" >联系我们</a><h2>
+                </div>
+                <div class="subnr index_connect">
+                    <img src="assets/images/CatactUs.jpg"  alt="锦跃科技" title="锦跃科技">  
+                    <p>联系人：叶先生</p>
+                    <p>手机：13018914283</p>
+                    <p>电话：0571-88581287   13357163105</p>
+                    <p>传真：0571-88735269</p>
+                    <p>邮箱：13018914283@163.com</p>
+                    <p>联系地址：杭州市西湖区留下街道西溪路1002号3楼303</p>
+                </div>
+                <!-- <div class="pub_top">
                     <div class="pub_top_rt fr"><a href="html/xinwenzixun/index.htm"  target="_blank"></a></div>
                     <div class="pub_top_lf fl">
                         <ul class="clearfix">
@@ -112,29 +124,29 @@
                     </div>
                     <div class="clear"></div>
                 </div>
-            <div class="abt_rt_ct" id="shk0">
+                <div class="abt_rt_ct" id="shk0">
                 
-                        <ul>
-							<li><span>2014-12-04</span><a target="_blank" href="html/xinwenzixun/chixuandongtai/2014/1204/19.html"  title="德国HBM-锦跃科技重推产品">德国HBM-锦跃科技重推产品</a></li>
+                    <ul>
+						<li><span>2014-12-04</span><a target="_blank" href="html/xinwenzixun/chixuandongtai/2014/1204/19.html"  title="德国HBM-锦跃科技重推产品">德国HBM-锦跃科技重推产品</a></li>
 
-                        </ul>
-                    </div>
-            <div class="abt_rt_ct" style="display: none;" id="shk1">
-                <ul>
-                    <li>
-                        <span>2014-12-04</span><a target="_blank" href="html/xinwenzixun/xingyezixun/2014/1204/18.html"  title="传感器在注塑机中关键的应用">传感器在注塑机中关键的应用</a>
-                    </li>
+                    </ul>
+                </div>
+                <div class="abt_rt_ct" style="display: none;" id="shk1">
+                    <ul>
+                        <li>
+                            <span>2014-12-04</span><a target="_blank" href="html/xinwenzixun/xingyezixun/2014/1204/18.html"  title="传感器在注塑机中关键的应用">传感器在注塑机中关键的应用</a>
+                        </li>
 
-                </ul>
+                    </ul>
+                </div>
+                <div class="pub_btom">
+                    <div class="pub_btom_lf fl"></div>
+                    <div class="pub_btom_rt fr"></div>
+                    <div class="clear"></div>
+                </div> -->
             </div>
-            <div class="pub_btom">
-                <div class="pub_btom_lf fl"></div>
-                <div class="pub_btom_rt fr"></div>
-                <div class="clear"></div>
-            </div>
-    </div>
-    <div class="clear"></div>
-</div>
+            <div class="clear"></div>
+        </div>
 </div>
 </section>
 <div ng-include="'components/footer/footer.html'"></div>

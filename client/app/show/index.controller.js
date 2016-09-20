@@ -1,17 +1,53 @@
 'use strict';
 
 angular.module('mywebApp')
-  .controller('IndexCtrl', function ($scope, $http, Auth, User) {
+  .controller('IndexCtrl', ['$scope', '$location', '$state','$stateParams','$cookieStore','Product','Category',
+    function ($scope, $location, $state,$stateParams,$cookieStore,Product,Category) {
 
-    // Use the User $resource to fetch all users
-    // $scope.users = User.query();
+    var self = this;
 
-    // $scope.delete = function(user) {
-    //   User.remove({ id: user._id });
-    //   angular.forEach($scope.users, function(u, i) {
-    //     if (u === user) {
-    //       $scope.users.splice(i, 1);
-    //     }
-    //   });
-    // };
-  });
+    var loadCategory=function(){
+        Category.index({isAll:'true',random:new Date().getTime()},function (data){
+            self.categories=data.categories;
+            self.categories.unshift({name:"全部"});
+        },function(){
+
+        });
+    };
+
+    var loadProduct = function(query,cb){
+
+        Product.index(query,function (data){
+            cb(null,data.products);
+        },function(err){
+            cb(err,null);
+        });
+    };
+
+    var loadNewProduct = function(){
+        var query={
+            itemsPerPage:20
+        };
+        loadProduct(query,function (err,products){
+            self.newProducts = products;
+        });
+    };
+
+    var loadPushProduct = function(){
+        var query={
+            sortBy:"hotDes",
+            itemsPerPage:9
+        };
+        loadProduct(query,function (err,products){
+            self.pushProducts = products;
+        });
+    };
+
+    var init = function(){
+        loadCategory();
+        loadPushProduct();
+        loadNewProduct();
+    };
+
+    init();
+  }]);

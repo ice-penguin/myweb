@@ -154,7 +154,6 @@ exports.index = function (req,res){
     if(keyWord){
     	condition.name={'$regex' : '.*' + keyWord + '.*',"$options":"$i"};
     }
-    console.log(condition);
     if(sortBy){
     	if("dateAsce"==sortBy){
 	    	sort={createDate:1};
