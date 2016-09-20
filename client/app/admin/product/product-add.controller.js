@@ -77,7 +77,7 @@ angular.module('mywebApp')
                         index++;
                         return doCompress();
                     }else{
-                        return alert(self.languagePack.error.imageError.compressError);
+                        return alert("图片压缩失败,请尝试再次上传!");
                     }
                 }
 

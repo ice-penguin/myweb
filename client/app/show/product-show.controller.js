@@ -1,17 +1,30 @@
 'use strict';
 
 angular.module('mywebApp')
-  .controller('ProductShowCtrl', function ($scope, $http, Auth, User) {
+  .controller('ProductShowCtrl', ['$scope', '$location', '$state','$stateParams','$cookieStore','Product','Category',
+    function ($scope, $location, $state,$stateParams,$cookieStore,Product,Category) {
+    var self = this;
+    var id = $stateParams.id;
 
-    // Use the User $resource to fetch all users
-    // $scope.users = User.query();
+    var loadCategory=function(){
+        Category.index({isAll:'true',random:new Date().getTime()},function (data){
+            self.categories=data.categories;
+            self.categories.unshift({name:"全部"});
+        },function(){
 
-    // $scope.delete = function(user) {
-    //   User.remove({ id: user._id });
-    //   angular.forEach($scope.users, function(u, i) {
-    //     if (u === user) {
-    //       $scope.users.splice(i, 1);
-    //     }
-    //   });
-    // };
-  });
+        });
+    };
+
+    var loadProduct = function(){
+        Product.index({id:id},function (data){
+            self.product = data.product;
+        });
+    };
+
+    var init = function(){
+        loadCategory();
+        loadProduct();
+    };
+
+    init();
+  }]);

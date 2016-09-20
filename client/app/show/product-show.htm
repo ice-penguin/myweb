@@ -1,56 +1,48 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 <section class="wrap">
-        <div class="fl lf_nav mt">
-            <div class="lf_nav_top">
-                <h2><a href="../../../../index.htm"  >杭州锦跃科技产品中心</a></h2>
-            </div>
-            <div class="lf_nav_ct">
-                <ul>
-                <li><a href="../../../niujuch/index.htm"  >扭矩传感器</a></li>
-                <li class='cur'><a href="../../index.htm"  >压力变送器</a></li>
-                <li><a href="../../../yeweibi/index.htm"  >分析仪表</a></li>
-                
-                <li><a href="../../../chaoshe/index.htm"  >超声波液位计</a></li>
-                
-                <li><a href="../../../diancil/index.htm"  >流量计</a></li>
-                
-                </ul>
-            </div>
-            <div class="lf_nav_btm">咨询服务热线<br><span>0571-88581287</span></div>
-            <div class="contactn mt mm">
-		<div class="tits">
-			<h4><a href="../../../../../lianxiwomen/index.htm"  >联系我们</a></h4>
-	    </div>
-	    <div class="subnr">
-	    	<img src="assets/images/CatactUs.jpg"   alt="杭州锦跃科技" title="杭州锦跃科技">  
-			<p>联系人：叶先生</p>
-            <p>手机：13018914283</p>
-            <p>电话：0571-88581287   13357163105</p>
-            <p>传真：0571-88735269</p>
-            <p>邮箱：13018914283@163.com</p>
-            <p>联系地址：杭州市西湖区留下街道西溪路1002号3楼303</p>
-	    </div>
+    <div class="fl lf_nav mt">
+        <div class="lf_nav_top">
+            <h2><a ui-sref="product">杭州锦跃科技产品中心</a></h2>
+        </div>
+        <div class="lf_nav_ct">
+            <ul>
+            	<li ng-repeat="category in productShowCtrl.categories" ><a href="" target="_blank" ng-bind="category.name" ui-sref="product({_category:category._id})">CXsensor传感器</a></li>
+            
+            </ul>
+        </div>
+        <div class="lf_nav_btm">咨询服务热线<br><span>0571-88581287</span></div>
+        <div class="contactn mt mm">
+			<div class="tits">
+				<h4><a href="../../../../../lianxiwomen/index.htm"  >联系我们</a></h4>
+		    </div>
+		    <div class="subnr">
+		    	<img src="assets/images/CatactUs.jpg"   alt="杭州锦跃科技" title="杭州锦跃科技">  
+				<p>联系人：叶先生</p>
+	            <p>手机：13018914283</p>
+	            <p>电话：0571-88581287   13357163105</p>
+	            <p>传真：0571-88735269</p>
+	            <p>邮箱：13018914283@163.com</p>
+	            <p>联系地址：杭州市西湖区留下街道西溪路1002号3楼303</p>
+		    </div>
+		</div>
 	</div>
-</div>
     <div class="fr pros mt">
         <div class="pub_top">
-            <div class="pub_top_rt position fr">当前位置：<a href="../../../../../../index.htm"  >首页</a> » <a href="../../../../index.htm"  >产品中心</a> » <a href="../../../index.htm"  >CXsensor传感器</a> » <a href="../../index.htm"  >压力变送器</a></div>
+            <div class="pub_top_rt position fr">当前位置：<a ui-sref="index">首页</a> » <a ui-sref="product">产品中心</a> » <a ui-sref="product({_category:productShowCtrl.product._category._id})" ng-bind="productShowCtrl.product._category.name">CXsensor传感器</a> » <a href="" ng-bind="productShowCtrl.product.name">压力变送器</a></div>
             <div class="pub_top_lf fl">
                 <ul>
-                    <li class="cur"><a href="">压力变送器</a></li>
+                    <li class="cur"><a href="" ng-bind="productShowCtrl.product.name"></a></li>
                 </ul>
             </div>
             <div class="clear"></div>
         </div>
         <div class="pub_bo coment">
 			<dl class="pleft clearfix">
-            	<dt><img src="../../../../../../uploads/allimg/150709/2-150F91459340-L.jpg"   alt="NKP600型投入式液位变送器"></dt>
-                <dd><strong>NKP600型投入式液位变送器</strong>
-                <p>点击次数：<script src="../../../../../../plus/count.php-view=yes&aid=156&mid=2"   type='text/javascript' language="javascript"></script></p>
-                <p>发布时间：2015-07-09</p>
-                <p>在线咨询：<a target=blank href=tencent://message/?uin=1632735741&Site=在线客服&Menu=yes><img SRC="../../../../../../../pub.idqqimg.com/qconn/wpa/button/button_old_101.gif"   alt="点击这里给我发消息"></a></p>
-                <p class="red">咨询热线：15869003718</p>
-                <div class="bshare-custom mt"><div class="bsPromo bsPromo2"></div><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到人人网" class="bshare-renren"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到网易微博" class="bshare-neteasemb"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count" style="float: none;">0</span></div><script type="text/javascript" charset="utf-8" src="../../../../../../../static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=3&amp;lang=zh"  ></script><script type="text/javascript" charset="utf-8" src="../../../../../../../static.bshare.cn/b/bshareC0.js"  ></script>
+            	<dt><img ng-src="{{'assets/upload/'+productShowCtrl.product.image}}"   alt="{{productShowCtrl.product.name}}"></dt>
+                <dd><strong>{{productShowCtrl.product.name}}</strong>
+                <p>发布时间：<span ng-bind="productShowCtrl.product.createDate | date:'yyyy-MM-dd'"></span></p>
+                <p>在线咨询：<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2449318994&site=qq&menu=yes"><img SRC="assets/images/qq_online.gif"   alt="点击这里给我发消息"></a></p>
+                <p class="red">咨询热线：13357163105</p>
                 </dd>
             </dl>
             <div class="fenlei">
@@ -58,55 +50,39 @@
                 <div class="coment">
                 	<div style="margin: 0px; padding: 0px; overflow: hidden;">
 						<div class="case" style="margin: 0px 40px 0px 0px; padding: 0px; float: left;">
-							<img src="../../../../../../../www.1718nk.com/uploads/img1/20150127/54c72c6a7097e.jpg"   style="border: 0px;" width="440" />
+							<img ng-src="{{'assets/upload/'+productShowCtrl.product.image}}" style="border: 0px;" width="440" />
 						</div>
 						<dl class="m50" style="margin: 50px 0px 0px; padding-right: 0px; padding-left: 0px; float: left;">
 							<dt class="f14" style="margin: 0px; padding: 0px; font-size: 14px; line-height: 36px;">
-								<strong>名称：NKP600型投入式液位变送器</strong></dt>
-							<dd style="margin: 0px; padding: 0px;">
-								型号：</dd>
-							<dd style="margin: 0px; padding: 0px;">
-								类型：</dd>
-							<dd style="margin: 0px; padding: 0px;">
-								日期：</dd>
+								<strong>名称：<span ng-bind="productShowCtrl.product.name"></span></strong>
+							</dt>
 							<dd class="f18 bold m50" style="margin: 50px 0px 0px; padding: 0px; font-size: 18px; font-weight: bold;">
-								订购咨询热线：15869003718</dd>
+								订购咨询热线：13357163105</dd>
 						</dl>
 					</div>
-					<div class="info-tit f18 mtop" style="margin: 18px 0px 10px; padding: 0px; font-size: 18px; border-bottom-width: 1px; border-bottom-color: rgb(204, 204, 204); border-bottom-style: solid; line-height: 40px;">功能特点</div>
+					<div class="info-tit f18 mtop function_title" >功能特点</div>
 					<div class="con" style="margin: 0px; padding: 0px;">
-						<p style="margin: 15px 0px; padding: 0px; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 宋体; line-height: 24px;">
-							◆橡胶圈防水密封；◆多种结构尺寸，最小&phi;19mm；◆防结露</p>
-						<p style="margin: 15px 0px; padding: 0px; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 宋体; line-height: 24px;">
-							◆长期稳定性好；◆内置微型信号处理电路，可进行远程传输</p>
-						<p style="margin: 15px 0px; padding: 0px; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 宋体; line-height: 24px;">
-							<strong>技术参数</strong></p>
-						<p style="margin: 15px 0px; padding: 0px; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 宋体; line-height: 24px;">
-							供电电源：24VDC；量程范围：0～0.5m&hellip;200m水柱；补偿温度：0～80℃；</p>
-						<p style="margin: 15px 0px; padding: 0px; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 宋体; line-height: 24px;">
-							输出信号：4～20mA、1～5V、0～10mA、0～20mA、0～5V、RS485；</p>
-						<p style="margin: 15px 0px; padding: 0px; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 宋体; line-height: 24px;">
-							介质温度：0～100℃(特殊定制)；环境温度：0～85℃；</p>
-						<p style="margin: 15px 0px; padding: 0px; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 宋体; line-height: 24px;">
-							零点温度漂移：&plusmn;0.03%FS/℃；灵敏度温度漂移：&plusmn;0.03%FS/℃；</p>
-						<p style="margin: 15px 0px; padding: 0px; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 宋体; line-height: 24px;">
-							材 &nbsp; &nbsp;质：全不锈钢；综合精度：0.25、0.3、0.5级可选；</p>
-						<p style="margin: 15px 0px; padding: 0px; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 宋体; line-height: 24px;">
-							过载压力：200%FS；长期稳定性：&le;0.2%FS/年</p>
-						<p style="margin: 15px 0px; padding: 0px; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 宋体; line-height: 24px;">
+						<p class="show_params" ng-repeat="fun in productShowCtrl.product.functions track by $index">◆ <span ng-bind="fun"></span></p>
+						<p class="show_params">
+							<strong>技术参数</strong>
+						</p>
+						<p class="show_params" ng-repeat="param in productShowCtrl.product.parameters track by $index"><span ng-bind="param.name"></span>：<span ng-bind="param.value"></span></p>
+						<!-- <p style="show_params">
 							<strong>规格型号</strong></p>
-						<p style="margin: 15px 0px; padding: 0px; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 宋体; line-height: 24px;">
+						<p style="show_params">
 							<span style="font-weight: bold; font-family: 宋体;"><img src="../../../../../../../www.1718nk.com/uploads/img1/20141224/549a2b20174f7.jpg"   style="border: 0px;" title="NKP600规格型号.jpg" /></span></p>
-						<p style="margin: 15px 0px; padding: 0px; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 宋体; line-height: 24px;">
+						<p style="show_params">
 							<strong>外型尺寸</strong>：</p>
-						<p style="margin: 15px 0px; padding: 0px; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 宋体; line-height: 24px;">
+						<p style="show_params">
 							仪表外形尺寸（尺寸会根据仪表所测介质及现场工况不同而有所改变，若有不同会预先告知）</p>
-						<p style="margin: 15px 0px; padding: 0px; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 宋体; line-height: 24px;">
-							&nbsp;</p>
-						<p class="p0" style="margin: 0pt 0px; padding: 0px; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 宋体; line-height: 24px;">
-							<img border="0" height="600" hspace="0" src="../../../../../../../www.1718nk.com/uploads/img1/20141224/549a2cf2572e8.png"   style="border: 0px; width: 600px; height: 600px;" title="示意图.png" vspace="0" width="600" /></p>
+						<p style="show_params">
+							&nbsp;</p> -->
+						<!-- <p class="p0" style="margin: 0pt 0px; padding: 0px; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 宋体; line-height: 24px;">
+							<img border="0" height="600" hspace="0" src="../../../../../../../www.1718nk.com/uploads/img1/20141224/549a2cf2572e8.png"   style="border: 0px; width: 600px; height: 600px;" title="示意图.png" vspace="0" width="600" />
+						</p>
 						<div class="ng-logo mtop" style="margin: 18px 0px 0px; padding: 15px 215px; color: rgb(51, 51, 51); font-size: 13px; border-bottom-color: rgb(181, 181, 181); border-bottom-width: 1px; border-bottom-style: dashed; font-family: 'Microsoft YaHei', 宋体; line-height: 24px;">
-							<strong style="margin: 0px; padding: 0px;"><em style="margin: 0px; padding: 0px;"><span style="margin: 0px; padding: 0px; font-size: 72px;">CXsensor</span></em></strong></div>
+							<strong style="margin: 0px; padding: 0px;"><em style="margin: 0px; padding: 0px;"><span style="margin: 0px; padding: 0px; font-size: 72px;">CXsensor</span></em></strong>
+						</div> -->
 						<p class="f14" style="margin: 15px 0px; padding: 0px; list-style: none; outline: none; border: 0px; color: rgb(51, 51, 51); font-size: 14px; font-family: 'Microsoft YaHei', 宋体; line-height: 24px;">
 							<strong style="margin: 0px; padding: 0px;">创造性价比最高的产品,提供最周全贴心的服务</strong><br style="margin: 0px; padding: 0px;" />
 							<br style="margin: 0px; padding: 0px;" />

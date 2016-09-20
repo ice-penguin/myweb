@@ -69,7 +69,7 @@
 					<div class="repear_input">
 						<div style="position:relative;" ng-repeat="parameter in editProductCtrl.product.parameters track by $index">
 							<!-- <input type="text" class="input_value" ng-model="editProductCtrl.product.functions[$index]"> -->
-							<div class="input_value pointer" ng-bind="parameter.name+':'+parameter.value" ng-click="editProductCtrl.showEidtCell(parameter,$index)"></div>
+							<div class="input_value pointer ellipsis" ng-bind="parameter.name+':'+parameter.value" ng-click="editProductCtrl.showEidtCell(parameter,$index)" title="{{parameter.name+':'+parameter.value}}"></div>
 							<div class="addMore" ng-hide="$index!=editProductCtrl.product.parameters.length-1" ng-click="editProductCtrl.showEidtCell()"></div>
 							<div class="reduce" ng-show="$index!=editProductCtrl.product.parameters.length-1"  ng-click="editProductCtrl.product.parameters.splice($index,1)"></div>
 							<div style="clear:both"></div>
