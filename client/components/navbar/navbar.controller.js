@@ -7,6 +7,22 @@ angular.module('mywebApp')
 
     var _category=null;
 
+    var i=0;
+
+    var images = ["slience_list1.jpg","slience_list2.jpg"];
+
+    self.showNavImage=images[i];
+
+    setInterval(function(){
+      i++;
+      if(i>(images.length-1)){
+        i=0;
+      }
+      self.showNavImage=images[i];
+      $scope.$apply();
+      console.log(self.showNavImage,"xxx");
+    },5000);
+
     var menu = function (){
         self.menu = [{
             title:'锦跃首页',

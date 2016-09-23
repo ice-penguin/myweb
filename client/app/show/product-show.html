@@ -63,10 +63,10 @@
 					<div class="info-tit f18 mtop function_title" >功能特点</div>
 					<div class="con" style="margin: 0px; padding: 0px;">
 						<p class="show_params" ng-repeat="fun in productShowCtrl.product.functions track by $index">◆ <span ng-bind="fun"></span></p>
-						<p class="show_params">
+						<!-- <p class="show_params" ng-show="productShowCtrl.product.parameters.length>0">
 							<strong>技术参数</strong>
 						</p>
-						<p class="show_params" ng-repeat="param in productShowCtrl.product.parameters track by $index"><span ng-bind="param.name"></span>：<span ng-bind="param.value"></span></p>
+						<p class="show_params" ng-repeat="param in productShowCtrl.product.parameters track by $index"><span ng-bind="param.name"></span>：<span ng-bind="param.value"></span></p> -->
 						<!-- <p style="show_params">
 							<strong>规格型号</strong></p>
 						<p style="show_params">

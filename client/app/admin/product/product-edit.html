@@ -64,11 +64,10 @@
 				</div>
 				<div style="clear:both"></div>
 
-				<div class="input_content">
+				<!-- <div class="input_content">
 					<div class="input_name">产品参数:</div>
 					<div class="repear_input">
 						<div style="position:relative;" ng-repeat="parameter in editProductCtrl.product.parameters track by $index">
-							<!-- <input type="text" class="input_value" ng-model="editProductCtrl.product.functions[$index]"> -->
 							<div class="input_value pointer ellipsis" ng-bind="parameter.name+':'+parameter.value" ng-click="editProductCtrl.showEidtCell(parameter,$index)" title="{{parameter.name+':'+parameter.value}}"></div>
 							<div class="addMore" ng-hide="$index!=editProductCtrl.product.parameters.length-1" ng-click="editProductCtrl.showEidtCell()"></div>
 							<div class="reduce" ng-show="$index!=editProductCtrl.product.parameters.length-1"  ng-click="editProductCtrl.product.parameters.splice($index,1)"></div>
@@ -78,7 +77,7 @@
 					<div class="addMore addMore_param" ng-click="editProductCtrl.showEidtCell()" ng-show="editProductCtrl.product.parameters.length==0"></div>
 					
 				</div>
-				<div style="clear:both"></div>
+				<div style="clear:both"></div> -->
 
 				<div class="input_content" style="color:red">
 					<div class="textarea_name">注意事项:</div>
@@ -99,11 +98,11 @@
 			<div class="close_btn" ng-click="editProductCtrl.closeEditCell()"></div>
 			<div class="input_contents">
 				<div class="input_content">
-					<div class="input_name">分类名:</div>
+					<div class="input_name">参数名:</div>
 					<input class="input_value" type="text" ng-model="editProductCtrl.eidtparameter.name">
 				</div>
 				<div class="input_content">
-					<div class="input_name">备注:</div>
+					<div class="input_name">参数值:</div>
 					<input class="input_value" type="text" ng-model="editProductCtrl.eidtparameter.value">
 				</div>
 			</div>
