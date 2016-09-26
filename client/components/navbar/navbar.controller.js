@@ -20,7 +20,7 @@ angular.module('mywebApp')
       }
       self.showNavImage=images[i];
       $scope.$apply();
-      console.log(self.showNavImage,"xxx");
+      // console.log(self.showNavImage,"xxx");
     },5000);
 
     var menu = function (){

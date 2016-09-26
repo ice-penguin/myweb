@@ -61,6 +61,7 @@ exports.create = function (req,res){
 		hotValue = req.body.hotValue,
 		functions = req.body.functions,//前端输入多个功能特点数组
 		parameters = req.body.parameters,
+		parametersImage = req.body.parametersImage,//参数图
 		_category = req.body._category;
 	if(!name){
 		return res.json(200,util.code301(language,"name"));
@@ -90,6 +91,9 @@ exports.create = function (req,res){
 	if(image){
 		obj.image = image;
 	}
+	if(parametersImage){
+		obj.parametersImage = parametersImage;
+	}
 
 	Category.findById(_category,function (err,category){
 		if (err) { return handleError(res, err); }
@@ -106,7 +110,7 @@ exports.create = function (req,res){
 
 exports.update = function (req,res){
 	var id = req.params.id;
-	var obj = _.pick(req.body,"name","image","_category","functions","parameters","hotValue");
+	var obj = _.pick(req.body,"name","image","parametersImage","_category","functions","parameters","hotValue");
 	if(obj.hotValue&&isNaN(obj.hotValue)){
 		return res.json(200,util.code402(language,"hotValue"));
 	}

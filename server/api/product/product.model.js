@@ -15,6 +15,7 @@ var ProductSchema = new Schema({
   	name:String,
   	value:String
   }],//参数
+  parametersImage:String,//参数图
   hotValue:Number,//推荐，热值排序字段
   createDate: Date
 });

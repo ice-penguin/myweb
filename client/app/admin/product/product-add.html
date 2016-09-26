@@ -38,7 +38,7 @@
 				<div style="clear:both"></div>
 
 				<div class="input_content">
-					<div class="input_name">图片:</div>
+					<div class="input_name">产品图片:</div>
 					<div class="submit_btn" ngf-select ngf-change="addProductCtrl.upload($files,0)">
 						<span class="submit_prompt">上传图片</span>
 						<img ng-src="{{'assets/upload/'+addProductCtrl.product.image}}"  class="submit_img" ng-show="addProductCtrl.product.image">
@@ -61,6 +61,19 @@
 						<div class="addMore addMore_param" ng-click="addProductCtrl.product.functions.push('')" ng-show="addProductCtrl.product.functions.length==0"></div>
 					</div>
 					
+				</div>
+				<div style="clear:both"></div>
+
+				<div class="input_content">
+					<div class="input_name">参数图:</div>
+					<div class="submit_btn" ngf-select ngf-change="addProductCtrl.upload_param($files,0)">
+						<span class="submit_prompt">上传图片</span>
+						<img ng-src="{{'assets/upload/'+addProductCtrl.product.parametersImage}}"  class="submit_img" ng-show="addProductCtrl.product.parametersImage">
+						<progressbar ng-show="addProductCtrl.loaded_param > 0" class="progress_bar" ng-class="{active: addProductCtrl.loaded_param < 100}" max="100" value="addProductCtrl.loaded_param">
+							<span ng-bind="addProductCtrl.loaded_param" ></span>%
+						</progressbar >
+					</div>
+					<span  style="color:red;font-size:12px">&nbsp;&nbsp;图片宽度不宜超过700px</span>
 				</div>
 				<div style="clear:both"></div>
 

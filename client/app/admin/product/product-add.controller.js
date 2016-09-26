@@ -20,6 +20,7 @@ angular.module('mywebApp')
 		image:null,//图片
 		hotValue:null,//热值，可以用推荐，越大排序越前
 		functions:[''],//功能与特点，
+        parametersImage:null,//参数图
 		parameters:[]//产品参数，name,value
     };
 
@@ -57,7 +58,7 @@ angular.module('mywebApp')
     	self.product.parameters=parameters;
     };
 
-    //上传aws
+    //上传产品图片
     self.upload = function (files) {
 
       var now = new Date().getTime();
@@ -94,6 +95,55 @@ angular.module('mywebApp')
                 	alert("上传失败");
                 }, function (evt) {
                   self.loaded = parseInt(100 * evt.loaded / evt.total, 10);
+                });
+
+            }, function(err_reason) {
+              console.log(err_reason);
+            });
+        };
+
+        doCompress();
+        
+      }
+    };
+
+    //上传参数图片
+    self.upload_param = function (files) {
+
+      var now = new Date().getTime();
+      var nowStr = now.toString();
+      var rand = (Math.floor(Math.random() * (MAX - MIN)) + MIN).toString();
+      var randStr = rand.toString();
+
+      if (files.length === 1) {
+        var file = files[0];
+        var filename = nowStr + '_' + randStr + '_' + file.name.replace(/[^0-9a-z\.]+/gi, '');
+        var index=0;//尝试次数
+        var doCompress=function(){
+            Compress_ready.resizeFile(file).then(function(blob_data) {
+                if(blob_data.size==0){
+                    //尝试次数为1次，则再尝试压缩，否则报错
+                    if(index==0){
+                        index++;
+                        return doCompress();
+                    }else{
+                        return alert("图片压缩失败,请尝试再次上传!");
+                    }
+                }
+
+                Upload.upload({
+                    method: 'POST',
+                    url: '/api/upload',
+                    data: {file: blob_data, 'filename': filename}
+                }).then(function (resp) {
+                    if(resp.data.code!=700){
+                        return alert(resp.data.msg);
+                    }
+                    self.product.parametersImage=filename;
+                }, function () {
+                    alert("上传失败");
+                }, function (evt) {
+                  self.loaded_param = parseInt(100 * evt.loaded / evt.total, 10);
                 });
 
             }, function(err_reason) {
