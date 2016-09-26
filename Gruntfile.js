@@ -331,11 +331,11 @@ module.exports = function (grunt) {
     },
 
     // Replace Google CDN references
-    cdnify: {
-      dist: {
-        html: ['<%= yeoman.dist %>/public/*.html']
-      }
-    },
+    // cdnify: {
+    //   dist: {
+    //     html: ['<%= yeoman.dist %>/public/*.html']
+    //   }
+    // },
 
     // Copies remaining files to places other tasks can use
     copy: {

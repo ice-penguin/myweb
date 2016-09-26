@@ -24,6 +24,34 @@ angular.module('mywebApp')
         controller: 'ProductShowCtrl',
         controllerAs:'productShowCtrl'
       })
+      .state('news', {
+        url: '/news?page&itemsPerPage&_category&keyWord',
+        params:{"navValue":"news"},
+        templateUrl: 'app/show/news.html',
+        controller: 'NewsCtrl',
+        controllerAs:'newsCtrl'
+      })
+      // .state('news-show', {
+      //   url: '/news/:id',
+      //   params:{"navValue":"news"},
+      //   templateUrl: 'app/show/news-show.html',
+      //   controller: 'NewsShowCtrl',
+      //   controllerAs:'newsShowCtrl'
+      // })
+      .state('sample', {
+        url: '/sample?page&itemsPerPage&_category&keyWord',
+        params:{"navValue":"sample"},
+        templateUrl: 'app/show/sample.html',
+        controller: 'SampleCtrl',
+        controllerAs:'sampleCtrl'
+      })
+      // .state('sample-show', {
+      //   url: '/sample/:id',
+      //   params:{"navValue":"sample"},
+      //   templateUrl: 'app/show/sample-show.html',
+      //   controller: 'SampleShowCtrl',
+      //   controllerAs:'sampleShowCtrl'
+      // })
       .state('connect', {
         url: '/connect',
         params:{"navValue":"connect"},

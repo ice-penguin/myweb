@@ -34,6 +34,12 @@ angular.module('mywebApp')
           title:'产品中心',
           state:'product'
         },{
+          title:'应用案例',
+          state:'sample'
+        },{
+          title:'新闻动态',
+          state:'news'
+        },{
           title:'联系我们',
           state:'connect'
         }];

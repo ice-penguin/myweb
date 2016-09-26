@@ -61,7 +61,7 @@ header .top { position:relative; text-align:right; background:url(../images/body
 .tel_no{ color:#ff9801; font-size:22px;}
 .h_nav{height:42px;text-align:center;margin:5px auto 0; line-height:42px;}
 .h_nav ul{*margin-top:-3px;}
-.h_nav li{ float:left;text-align:center; width:24.5%; background:url(../images/hd_nav_line.gif) right 1px no-repeat;}
+.h_nav li{ float:left;text-align:center; width:16%; background:url(../images/hd_nav_line.gif) right 1px no-repeat;}
 .h_nav .last{ background:none;}
 .h_nav a{ display:inline-block;color:#fff; width:100%; font-size:15px;}
 .h_nav .cur,.h_nav a:hover{ background:url(../images/hd_nav_curBg.gif) center top no-repeat; text-decoration:none;}
