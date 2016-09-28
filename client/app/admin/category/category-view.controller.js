@@ -43,7 +43,7 @@ function ($scope, $location, $state,$stateParams,$cookieStore,Auth,User,Category
     };
 
     var loadCategory=function(){
-        Category.index({itemsPerPage:self.pagination.itemsPerPage,page:self.pagination.page,random:new Date().getTime()},function (data){
+        Category.index({itemsPerPage:self.pagination.itemsPerPage,page:self.pagination.page},function (data){
             self.categories=data.categories;
             var totalItems = data.count;
             self.pagination.totalItems = totalItems;

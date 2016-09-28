@@ -6,7 +6,7 @@ angular.module('mywebApp')
     var self = this;
 
     var loadCategory=function(){
-        Category.index({isAll:'true',random:new Date().getTime()},function (data){
+        Category.index({isAll:'true'},function (data){
             self.categories=data.categories;
             self.categories.unshift({name:"全部"});
         },function(){

@@ -26,7 +26,7 @@ angular.module('mywebApp')
     };
 
     var loadCategory=function(){
-        Category.index({isAll:'true',random:new Date().getTime()},function (data){
+        Category.index({isAll:'true'},function (data){
             self.categories=data.categories;
             self.categories.unshift({name:"全部"});
         },function(){
@@ -70,6 +70,10 @@ angular.module('mywebApp')
         }
         self.pagination.page=1;
         keyWord=null;
+        doLocation();
+    };
+
+    self.pageChanged=function(){
         doLocation();
     };
 
